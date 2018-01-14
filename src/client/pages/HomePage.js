@@ -7,33 +7,34 @@ import Container from '../components/Container';
 import H1 from '../components/H1';
 import H2 from '../components/H2';
 
+const KEYWORDS = `
+tenis, tennis, colegio, mexicano, México, Quéretaro, escuela, clases, tenis mexicano,
+colegio de tenis, escuela de tenis, clases de tenis, tenis en mexico,
+tennis in mexico, tennis en mexico, tenis queretaro, escuela de tenis en queretaro,
+colegio de tenis en queretaro
+`;
+
 const HomePage = () => (
   <DarkTheme>
     <Fragment>
       <Helmet>
-        <title>Colegio de tenis mexicano</title>
+        <title>ctmex</title>
         <meta property="og:site_name" content="ctmex" />
-        <meta
-          property="og:title"
-          content="Colegio de tenis mexicano"
-        />
-        <meta property="og:url" content="http://victorhqc.com" />
+        <meta property="og:title" content="Colegio de tenis mexicano" />
+        <meta property="og:url" content="http://colegiodetenis.mx" />
         <meta property="og:type" content="website" />
         <meta property="og:author" content="https://github.com/victorhqc" />
 
-        {/* <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:site" content="@victorhqc" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:site" content="@colegiotenismx" />
         <meta property="twitter:creator" content="https://github.com/victorhqc" />
-        <meta property="twitter:title" content="victorhqc" />
-        <meta property="twitter:description" content="Colegio de tenis mexicano" /> */}
+        <meta property="twitter:title" content="ctmex" />
+        <meta property="twitter:description" content="Colegio de tenis mexicano" />
 
-        <meta
-          name="description"
-          content=""
-        />
+        <meta name="description" content="Colegio de tenis mexicano" />
         <meta
           name="keywords"
-          content="tenis, colegio, mexicano, escuela, clases"
+          content={KEYWORDS}
         />
       </Helmet>
       <Container verticalAlign>

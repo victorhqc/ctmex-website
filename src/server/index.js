@@ -28,11 +28,6 @@ export default ({ req, context }) => {
     ${helmet.title.toString()}
     ${helmet.meta.toString()}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400">
-    <!--
-      Font Face imported from https://fonts.google.com
-      Typography selected is 'Roboto'
-    -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
     ${styleTags}
   </head>

@@ -27,14 +27,18 @@ export const FONT_SIZES = {
 };
 
 export const FONT_FAMILIES = {
-  roboto: '\'Roboto\', sans-serif',
+  gotham: '\'Gotham\', sans-serif',
+  sourceSansPro: '\'SourceSansPro\', sans-serif',
 };
 
 export const COLORS = {
   white: '#fff',
   black: '#333',
-  steelBlue: '#348AA7',
-  independence: '#525174',
+  carnation: '#f45a56',
+  yellowOrange: '#ffbd48',
+  shamrock: '#50dd90',
+  goldenFizz: '#e2ff3b',
+  persianBlue: '#1946ba',
 };
 
 export const BASE_THEME = {

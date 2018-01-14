@@ -8,7 +8,7 @@ import {
 } from './constants';
 
 const baseTheme = {
-  fontFamily: FONT_FAMILIES.roboto,
+  fontFamily: FONT_FAMILIES.gotham,
   fontSize: FONT_SIZES.sm,
 
   SIZES,
