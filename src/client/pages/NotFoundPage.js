@@ -8,7 +8,7 @@ const NotFoundPage = ({ staticContext }) => {
   staticContext.set(NOT_FOUND, true);
 
   return (
-    <h1>Oops, route not found.</h1>
+    <h1>Ups, página no encontrada.</h1>
   );
 };
 
