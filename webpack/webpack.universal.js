@@ -2,6 +2,9 @@
 
 const webpack = require('webpack');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
+const { imageminLoader } = require('imagemin-webpack');
+const imageminJpegtran = require('imagemin-jpegtran');
+const imageminJpegRecompress = require('imagemin-jpeg-recompress');
 
 const path = require('path');
 const fs = require('fs');
@@ -62,7 +65,7 @@ const fileRule = {
     /\.png$/,
     // /\.ttf$/,
     /\.eot$/,
-    /\.svg$/,
+    // /\.svg$/,
     /\.woff?2$/,
     // /\.otf$/,
   ],
@@ -74,11 +77,31 @@ const fileRule = {
 
 const urlRule = {
   test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
-  loader: require.resolve('url-loader'),
-  options: {
-    limit: 10000,
-    ...fileOptions,
-  },
+  use: [
+    {
+      loader: require.resolve('url-loader'),
+      options: {
+        limit: 10000,
+        ...fileOptions,
+      },
+    },
+    {
+      loader: imageminLoader,
+      options: {
+        plugins: [
+          imageminJpegRecompress({
+            method: 'smallfry',
+          }),
+          imageminJpegtran(),
+        ],
+      },
+    },
+  ],
+  // loader: require.resolve('url-loader'),
+  // options: {
+  //   limit: 10000,
+  //   ...fileOptions,
+  // },
 };
 
 const babelRule = {
@@ -109,6 +132,8 @@ const buildRules = () => {
     // smaller than specified limit in bytes as data URLs to avoid requests.
     // A missing `test` is equivalent to a match.
     { rule: urlRule, name: 'url' },
+
+    // { rule: svgRule, name: 'svg' },
 
     { rule: babelRule, name: 'babel' },
   ];

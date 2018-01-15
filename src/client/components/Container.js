@@ -11,6 +11,7 @@ import {
 const Container = styled.div`
   font-family: ${props => props.theme.fontFamily};
   color: ${props => props.theme.color};
+  background: ${props => props.theme.backgroundColor || 'transparent'};
 
   ${setMargin}
   ${setPadding}

@@ -35,16 +35,6 @@ export default ({ req, context }) => {
     <div id="root">${content}</div>
     <script src="${bundle}?${version}"></script>
     <script>window.__VERSION__='${version}';</script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77111108-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-77111108-1');
-    </script>
-
   </body>
 </html>`;
 };

@@ -1,29 +1,14 @@
 import styled from 'styled-components';
-import { getColor, getSize } from '../themes/base';
-
-const primaryColor = () => getColor('steelBlue');
-const secondaryColor = () => getColor('independence');
-
-const getBackground = (props) => {
-  if (!props.src) {
-    return `linear-gradient(-45deg, ${primaryColor()}, ${secondaryColor()})`;
-  }
-
-  return `
-    url(${props.src}), linear-gradient(-45deg, ${primaryColor()}, ${secondaryColor()})
-    `;
-};
+import { getSize } from '../themes/base';
 
 const Background = styled.div`
-  height: 100vh;
-  width: 100%;
-  position: absolute;
-  z-index: -1;
+  height: ${props => props.height || '100vh'};
+  width: ${props => props.width || '100%'};
+  position: ${props => props.position || 'relative'};
+  z-index: ${props => props.zIndex || ''};
 
-  background: ${primaryColor};
-  background: linear-gradient(left top, ${primaryColor}, ${secondaryColor});
-  background: ${getBackground};
-  background-blend-mode: overlay;
+  background-image: ${props => `url(${props.src})` || ''};
+  background-position: 'center';
   background-size: cover;
 
   @media (max-width: ${getSize('sm')}px) {

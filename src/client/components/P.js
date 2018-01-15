@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 import { getFontSize } from '../themes/base';
 
+import {
+  setTextAlign,
+  setPadding,
+  setMargin,
+  noMargin,
+  noPadding,
+} from '../themes/utils';
+
 const fontSize = (props) => {
   if (props.lead) {
     return '1.2em';
@@ -12,6 +20,12 @@ const fontSize = (props) => {
 const P = styled.p`
   font-size: ${fontSize};
   font-weight: 300;
+
+  ${setTextAlign}
+  ${setPadding}
+  ${setMargin}
+  ${noMargin}
+  ${noPadding}
 `;
 
 export default P;
