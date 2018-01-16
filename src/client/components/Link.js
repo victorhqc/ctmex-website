@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
+import { setColor } from '../themes/utils';
+
 const Link = styled.a`
-  color: ${props => props.theme.color};
+  ${setColor}
 `;
 
 export default Link;

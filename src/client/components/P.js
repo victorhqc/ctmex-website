@@ -7,6 +7,7 @@ import {
   setMargin,
   noMargin,
   noPadding,
+  setColor,
 } from '../themes/utils';
 
 const fontSize = (props) => {
@@ -26,6 +27,7 @@ const P = styled.p`
   ${setMargin}
   ${noMargin}
   ${noPadding}
+  ${setColor}
 `;
 
 export default P;

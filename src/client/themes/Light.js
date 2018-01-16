@@ -1,12 +1,12 @@
 import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
-import baseTheme from './base';
+import baseTheme, { getColor } from './base';
 
 const theme = {
   ...baseTheme,
-  backgroundColor: baseTheme.COLORS.white,
-  color: baseTheme.COLORS.black,
+  backgroundColor: getColor('white'),
+  color: getColor('black'),
 };
 
 const LightTheme = ({ children }) => (

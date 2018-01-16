@@ -1,13 +1,14 @@
 import styled from 'styled-components';
-import { getFontSize } from '../themes/base';
-import { noMargin } from '../themes/utils';
+import { getFontSize, getFontFamily } from '../themes/base';
+import { noMargin, setColor } from '../themes/utils';
 
 const H1 = styled.h1`
-  font-family: ${props => props.theme.FONT_FAMILIES.sourceSansPro};
+  font-family: ${getFontFamily('sourceSansPro')};
   font-size: ${getFontSize('xl')}em;
   font-weight: bold;
 
   ${noMargin}
+  ${setColor}
 `;
 
 export default H1;

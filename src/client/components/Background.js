@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 import { getSize } from '../themes/base';
+import { setHide } from '../themes/utils';
+
+const setMinHeight = ({ minHeight }) => {
+  if (!minHeight) {
+    return '';
+  }
+
+  return `min-height: ${minHeight};`;
+};
 
 const Background = styled.div`
   height: ${props => props.height || '100vh'};
@@ -10,6 +19,8 @@ const Background = styled.div`
   background-image: ${props => `url(${props.src})` || ''};
   background-position: 'center';
   background-size: cover;
+  ${setMinHeight};
+  ${setHide};
 
   @media (max-width: ${getSize('sm')}px) {
     background-position: 75%;

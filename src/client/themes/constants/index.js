@@ -1,5 +1,5 @@
 export const SIZES = {
-  xs: 320,
+  xs: 375,
   sm: 768,
   md: 1024,
   lg: 1224,

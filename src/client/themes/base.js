@@ -10,21 +10,13 @@ import {
 const baseTheme = {
   fontFamily: FONT_FAMILIES.gotham,
   fontSize: FONT_SIZES.sm,
-
-  SIZES,
-  PADDING,
-  MARGIN,
-  FONT_SIZES,
-  FONT_FAMILIES,
-  COLORS,
 };
 
-export const getProperty = (property, key) => baseTheme[property][key];
-
-export const getColor = color => getProperty('COLORS', color);
-export const getSize = size => getProperty('SIZES', size);
-export const getFontSize = size => getProperty('FONT_SIZES', size);
-export const getMargin = margin => getProperty('MARGIN', margin);
-export const getPadding = padding => getProperty('PADDING', padding);
+export const getColor = color => COLORS[color];
+export const getSize = size => SIZES[size];
+export const getFontSize = size => FONT_SIZES[size];
+export const getFontFamily = fontFamily => FONT_FAMILIES[fontFamily];
+export const getMargin = margin => MARGIN[margin];
+export const getPadding = padding => PADDING[padding];
 
 export default baseTheme;

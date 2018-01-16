@@ -27,6 +27,7 @@ export default ({ req, context }) => {
   <head>
     ${helmet.title.toString()}
     ${helmet.meta.toString()}
+    <meta http-equiv="content-language" content="es">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
     ${styleTags}

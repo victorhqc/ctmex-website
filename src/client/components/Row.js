@@ -1,21 +1,33 @@
 import styled from 'styled-components';
 
+import {
+  getSize,
+} from '../themes/base';
+
 const mediaBreakPoint = size => `
   @media (max-width: ${size}px) {
     flex-wrap: wrap;
+
+    > div {
+      width: 100% !important;
+    }
   }
 `;
 
-const wrap = ({ size, theme }) => {
+const wrap = ({ size, noWrap }) => {
+  if (noWrap) {
+    return '';
+  }
+
   switch (size) {
     case 'xs':
-      return mediaBreakPoint(theme.SIZES.xs);
+      return mediaBreakPoint(getSize('xs'));
     case 'md':
-      return mediaBreakPoint(theme.SIZES.md);
+      return mediaBreakPoint(getSize('md'));
     case 'lg':
-      return mediaBreakPoint(theme.SIZES.lg);
+      return mediaBreakPoint(getSize('lg'));
     default:
-      return mediaBreakPoint(theme.SIZES.md);
+      return mediaBreakPoint(getSize('md'));
   }
 };
 

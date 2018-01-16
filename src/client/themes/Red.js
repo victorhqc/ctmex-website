@@ -5,7 +5,7 @@ import baseTheme, { getColor } from './base';
 
 const theme = {
   ...baseTheme,
-  backgroundColor: getColor('persianBlue'),
+  backgroundColor: getColor('carnation'),
   color: getColor('white'),
 };
 
