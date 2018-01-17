@@ -25,8 +25,18 @@ const margin = (props) => {
   return `margin: 0 ${getMargin('md')}px;`;
 };
 
+const setZIndex = (props) => {
+  if (!props.zIndex) {
+    return '';
+  }
+
+  return `z-index: ${props.zIndex};`;
+};
+
 const Container = styled.div`
   font-family: ${props => props.theme.fontFamily};
+  position: relative;
+  ${setZIndex};
   ${margin}
   ${setMargin}
   ${setPadding}

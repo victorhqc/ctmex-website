@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 // import LightTheme from '../themes/Light';
 // import DarkTheme from '../themes/Dark';
 import RedTheme from '../themes/Red';
+import BlueTheme from '../themes/Blue';
 import {
   getColor,
   getMargin,
@@ -18,6 +19,7 @@ import Background from '../components/Background';
 // import H1 from '../components/H1';
 import H2 from '../components/H2';
 import P from '../components/P';
+import DoodleBackground from '../components/DoodleBackground';
 
 import {
   ABOUT,
@@ -28,6 +30,8 @@ import {
 import ctmexWhite from '../../assets/ctmex_white.svg';
 import ctmexCover from '../../assets/pictures/ctmex_cover.jpg';
 import kidsRunning from '../../assets/pictures/home_running.jpg';
+import catching from '../../assets/pictures/home_catching.jpg';
+import ballBackpackDoodle from '../../assets/doodles/ctmex_ball_backpack.svg';
 
 const KEYWORDS = `
 tenis, tennis, colegio, mexicano, México, Quéretaro, escuela, clases, tenis mexicano,
@@ -45,35 +49,15 @@ const Logo = styled.img`
   transform: translate3d(${margin}px, -${margin}px, 0);
 `;
 
-const Gap = styled.div`
-  position: relative;
-  height: 500px;
-  width: 100%;
+const Wrapper = styled.div`
   background: ${getColor('white')};
   text-align: center;
 `;
 
 const Box = styled.div`
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 65%;
-  transform: translate3d(-50%, -50px, 0);
-
-  @media (max-width: ${getSize('lg')}px) {
-    height: 300px;
-  }
-
-  @media (max-width: ${getSize('md')}px) {
-    width: 80%;
-    height: 300px;
-  }
-
-  @media (max-width: ${getSize('xs')}px) {
-    left: 0;
-    width: 100%;
-    transform: translate3d(0, 0, 0);
-  }
+  margin-top: 10px;
+  margin-left: 10px;
+  width: calc(100% - 20px);
 `;
 
 const HomePage = () => (
@@ -99,31 +83,43 @@ const HomePage = () => (
       />
     </Helmet>
     <Background src={ctmexCover} height="60vh">
-      <Logo src={ctmexWhite} alt="ctmex_white_logo" width="300" />
+      <Logo src={ctmexWhite} alt="ctmex_white_logo" width="150" />
     </Background>
-    <Gap>
+    <Wrapper>
       <Box>
         <RedTheme>
-          <Container noMargin>
+          <Container noMargin background="transparent" zIndex={1}>
+            <DoodleBackground src={ballBackpackDoodle} />
             <Row size="xs">
               <Column size={1 / 3}>
-                <Background
-                  hide="sm"
-                  src={kidsRunning}
-                  height="100%"
-                />
+                <img src={kidsRunning} width="100%" alt="niños corriendo" />
               </Column>
               <Column size={2 / 3}>
-                <Container>
-                  <H2>{WHAT_IS_TITLE}</H2>
-                  <P lead>{WHAT_IS}</P>
-                </Container>
+                <H2>{WHAT_IS_TITLE}</H2>
+                <P lead>{WHAT_IS}</P>
               </Column>
             </Row>
           </Container>
         </RedTheme>
       </Box>
-    </Gap>
+    </Wrapper>
+    <Wrapper>
+      <Box>
+        <BlueTheme>
+          <Container noMargin background="transparent" zIndex={1}>
+            <DoodleBackground src={ballBackpackDoodle} />
+            <Row size="xs">
+              <Column size={5 / 7}>
+                <H2>Inscripciones</H2>
+              </Column>
+              <Column size={2 / 7}>
+                <img src={catching} width="100%" alt="niño con pelotas de tenis" />
+              </Column>
+            </Row>
+          </Container>
+        </BlueTheme>
+      </Box>
+    </Wrapper>
   </Fragment>
 );
 

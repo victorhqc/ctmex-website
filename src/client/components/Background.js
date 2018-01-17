@@ -11,7 +11,7 @@ const setMinHeight = ({ minHeight }) => {
 };
 
 const Background = styled.div`
-  height: ${props => props.height || '100vh'};
+  height: ${props => props.height || ''};
   width: ${props => props.width || '100%'};
   position: ${props => props.position || 'relative'};
   z-index: ${props => props.zIndex || ''};
