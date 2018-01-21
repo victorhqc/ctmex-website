@@ -1,3 +1,10 @@
+export const KEYWORDS = `
+tenis, tennis, colegio, mexicano, México, Quéretaro, escuela, clases, tenis mexicano,
+colegio de tenis, escuela de tenis, clases de tenis, tenis en mexico,
+tennis in mexico, tennis en mexico, tenis queretaro, escuela de tenis en queretaro,
+colegio de tenis en queretaro
+`;
+
 export const ABOUT = `El primer colegio de tenis en México basado en un método de enseñanza
 innovador con el cual el niño o niña aprende de acuerdo a su edad, tamaño y fuerza.
 ¡Si aprendemos de mejor manera, jugaremos mejor!`;

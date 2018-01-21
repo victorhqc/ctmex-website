@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 
 import LightTheme from '../themes/Light';
-// import DarkTheme from '../themes/Dark';
+import DarkTheme from '../themes/Dark';
 import RedTheme from '../themes/Red';
 import BlueTheme from '../themes/Blue';
 import {
@@ -15,6 +15,7 @@ import {
   setVerticalAlign,
 } from '../themes/utils';
 
+import Menu from '../components/Menu';
 import Container from '../components/Container';
 import Row from '../components/Row';
 import Column from '../components/Column';
@@ -26,6 +27,7 @@ import DoodleBackground from '../components/DoodleBackground';
 
 import {
   // ABOUT,
+  KEYWORDS,
   WHAT_IS_TITLE,
   WHAT_IS,
   REGISTRATION,
@@ -40,13 +42,6 @@ import kidsRunning from '../../assets/pictures/home_running.jpg';
 import catching from '../../assets/pictures/home_catching.jpg';
 import ballBackpackDoodle from '../../assets/doodles/ctmex_ball_backpack.svg';
 import raquetTrophyDoodle from '../../assets/doodles/ctmex_raquet_trophy.svg';
-
-const KEYWORDS = `
-tenis, tennis, colegio, mexicano, México, Quéretaro, escuela, clases, tenis mexicano,
-colegio de tenis, escuela de tenis, clases de tenis, tenis en mexico,
-tennis in mexico, tennis en mexico, tenis queretaro, escuela de tenis en queretaro,
-colegio de tenis en queretaro
-`;
 
 const margin = getMargin('md');
 
@@ -96,6 +91,9 @@ const HomePage = () => (
         content={KEYWORDS}
       />
     </Helmet>
+    <DarkTheme>
+      <Menu />
+    </DarkTheme>
     <Background src={ctmexCover} height="60vh">
       <Logo src={ctmexWhite} alt="ctmex_white_logo" width="150" />
     </Background>
