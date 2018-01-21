@@ -32,8 +32,8 @@ export const FONT_FAMILIES = {
 };
 
 export const COLORS = {
-  white: '#fff',
-  black: '#333',
+  white: '#ffffff',
+  black: '#333333',
   carnation: '#f45a56',
   yellowOrange: '#ffbd48',
   shamrock: '#50dd90',

@@ -18,5 +18,6 @@ export const getFontSize = size => FONT_SIZES[size];
 export const getFontFamily = fontFamily => FONT_FAMILIES[fontFamily];
 export const getMargin = margin => MARGIN[margin];
 export const getPadding = padding => PADDING[padding];
+export const getThemeColor = ({ theme }) => theme.color;
 
 export default baseTheme;

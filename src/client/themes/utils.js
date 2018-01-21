@@ -3,6 +3,12 @@ import {
   getSize,
 } from './base';
 
+export const mediaQuery = (size, items) => `
+@media (max-width: ${getSize(size)}px) {
+  ${items}
+}
+`;
+
 const setSpacing = (props, keyName) => {
   if (!props[keyName]) {
     return '';
@@ -104,11 +110,7 @@ export const setBackground = ({ theme, background }) => {
   return `background: ${background};`;
 };
 
-const hideWithSize = size => `
-  @media (max-width: ${getSize(size)}px) {
-    display: none;
-  }
-`;
+const hideWithSize = size => mediaQuery(size, 'display: none;');
 
 export const setHide = ({ hide }) => {
   switch (hide) {
