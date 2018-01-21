@@ -37,9 +37,8 @@ const Form = styled.form`
   align-items: center;
   align-content: center;
 
-  label {
+  .label {
     display: block;
-    margin: 0 auto;
   }
 
   input[type="text"],
@@ -88,7 +87,7 @@ class ContactPage extends Component {
 
     return (
       <Form onSubmit={this.onSubmit}>
-        <label htmlFor={FORM_NAME}>
+        <label className="label" htmlFor={FORM_NAME}>
           {FORM_NAME}
           <input
             type="text"
@@ -98,7 +97,7 @@ class ContactPage extends Component {
             onChange={this.onChange('name')}
           />
         </label>
-        <label htmlFor={FORM_PHONE}>
+        <label className="label" htmlFor={FORM_PHONE}>
           {FORM_PHONE}
           <input
             type="number"
@@ -108,7 +107,7 @@ class ContactPage extends Component {
             onChange={this.onChange('phone')}
           />
         </label>
-        <label htmlFor={FORM_EMAIL}>
+        <label className="label" htmlFor={FORM_EMAIL}>
           {FORM_EMAIL}
           <input
             type="email"
@@ -118,7 +117,7 @@ class ContactPage extends Component {
             onChange={this.onChange('email')}
           />
         </label>
-        <label htmlFor={FORM_TITLE}>
+        <label className="label" htmlFor={FORM_TITLE}>
           {FORM_TITLE}
           <input
             type="text"
@@ -128,7 +127,7 @@ class ContactPage extends Component {
             onChange={this.onChange('title')}
           />
         </label>
-        <label htmlFor={FORM_BODY}>
+        <label className="label" htmlFor={FORM_BODY}>
           {FORM_BODY}
           <textarea
             id={FORM_BODY}
@@ -176,11 +175,11 @@ class ContactPage extends Component {
                   {this.renderForm()}
                 </Column>
                 <Column size={1 / 3}>
-                  <H3>
+                  <H3 tabIndex="0">
                     {PHONE}<br />
                     <small>445 123 123</small>
                   </H3>
-                  <H3>
+                  <H3 tabIndex="0">
                     {ADDRESS}<br />
                     <small>Querétaro, Qro. Mex.</small>
                   </H3>

@@ -108,8 +108,10 @@ const HomePage = () => (
                 <img src={kidsRunning} width="100%" alt="niños corriendo" />
               </Column>
               <Column size={2 / 3}>
-                <H2>{WHAT_IS_TITLE}</H2>
-                <P lead>{WHAT_IS}</P>
+                <section>
+                  <H2>{WHAT_IS_TITLE}</H2>
+                  <P lead>{WHAT_IS}</P>
+                </section>
               </Column>
             </Row>
           </Container>
@@ -123,7 +125,9 @@ const HomePage = () => (
             <DoodleBackground src={raquetTrophyDoodle} />
             <Row size="xs">
               <Column size={5 / 7}>
-                <H2>{REGISTRATION}</H2>
+                <section>
+                  <H2>{REGISTRATION}</H2>
+                </section>
               </Column>
               <Column size={2 / 7}>
                 <img src={catching} width="100%" alt="niño con pelotas de tenis" />
@@ -147,9 +151,11 @@ const HomePage = () => (
           </Column>
           <Column size={3 / 5}>
             <Container textAlign="right">
-              <H1>{SIX_YEARS_TITLE}</H1>
-              <P lead>{SIX_YEARS}</P>
-              <P lead>{SIX_YEARS_2}</P>
+              <section>
+                <H1>{SIX_YEARS_TITLE}</H1>
+                <P lead>{SIX_YEARS}</P>
+                <P lead>{SIX_YEARS_2}</P>
+              </section>
             </Container>
           </Column>
         </Row>
