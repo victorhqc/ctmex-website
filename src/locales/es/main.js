@@ -10,6 +10,10 @@ export const routes = [
     url: '/method',
   },
   {
+    label: 'Inscripciones',
+    url: '/registration',
+  },
+  {
     label: 'Contacto',
     url: '/contact',
   },

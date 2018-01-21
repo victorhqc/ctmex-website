@@ -38,6 +38,7 @@ import {
 } from '../../locales/es/home';
 
 import logo from '../../assets/ctmex.svg';
+import imagotipo from '../../assets/ctmex_imagotipo.svg';
 import ctmexCover from '../../assets/pictures/ctmex_cover.jpg';
 import kidsRunning from '../../assets/pictures/home_running.jpg';
 import catching from '../../assets/pictures/home_catching.jpg';
@@ -135,11 +136,24 @@ const HomePage = () => (
     </Wrapper>
     <WhiteTheme>
       <Gap verticalAlign>
-        <Container>
-          <H1>{SIX_YEARS_TITLE}</H1>
-          <P>{SIX_YEARS}</P>
-          <P>{SIX_YEARS_2}</P>
-        </Container>
+        <Row>
+          <Column size={2 / 5}>
+            <Container>
+              <img
+                width="100%"
+                src={imagotipo}
+                alt="ctmex imagotipo"
+              />
+            </Container>
+          </Column>
+          <Column size={3 / 5}>
+            <Container textAlign="right">
+              <H1>{SIX_YEARS_TITLE}</H1>
+              <P lead>{SIX_YEARS}</P>
+              <P lead>{SIX_YEARS_2}</P>
+            </Container>
+          </Column>
+        </Row>
       </Gap>
     </WhiteTheme>
     <Footer />
