@@ -2,29 +2,36 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 
-// import LightTheme from '../themes/Light';
+import LightTheme from '../themes/Light';
 // import DarkTheme from '../themes/Dark';
 import RedTheme from '../themes/Red';
 import BlueTheme from '../themes/Blue';
 import {
   getColor,
   getMargin,
-  getSize,
+  // getSize,
 } from '../themes/base';
+import {
+  setVerticalAlign,
+} from '../themes/utils';
 
 import Container from '../components/Container';
 import Row from '../components/Row';
 import Column from '../components/Column';
 import Background from '../components/Background';
-// import H1 from '../components/H1';
+import H1 from '../components/H1';
 import H2 from '../components/H2';
 import P from '../components/P';
 import DoodleBackground from '../components/DoodleBackground';
 
 import {
-  ABOUT,
+  // ABOUT,
   WHAT_IS_TITLE,
   WHAT_IS,
+  REGISTRATION,
+  SIX_YEARS_TITLE,
+  SIX_YEARS,
+  SIX_YEARS_2,
 } from '../../locales/es/home';
 
 import ctmexWhite from '../../assets/ctmex_white.svg';
@@ -32,6 +39,7 @@ import ctmexCover from '../../assets/pictures/ctmex_cover.jpg';
 import kidsRunning from '../../assets/pictures/home_running.jpg';
 import catching from '../../assets/pictures/home_catching.jpg';
 import ballBackpackDoodle from '../../assets/doodles/ctmex_ball_backpack.svg';
+import raquetTrophyDoodle from '../../assets/doodles/ctmex_raquet_trophy.svg';
 
 const KEYWORDS = `
 tenis, tennis, colegio, mexicano, México, Quéretaro, escuela, clases, tenis mexicano,
@@ -58,6 +66,12 @@ const Box = styled.div`
   margin-top: 10px;
   margin-left: 10px;
   width: calc(100% - 20px);
+`;
+
+const Gap = styled.div`
+    width: 100%;
+    height: 500px;
+    ${setVerticalAlign}
 `;
 
 const HomePage = () => (
@@ -107,10 +121,10 @@ const HomePage = () => (
       <Box>
         <BlueTheme>
           <Container noMargin background="transparent" zIndex={1}>
-            <DoodleBackground src={ballBackpackDoodle} />
+            <DoodleBackground src={raquetTrophyDoodle} />
             <Row size="xs">
               <Column size={5 / 7}>
-                <H2>Inscripciones</H2>
+                <H2>{REGISTRATION}</H2>
               </Column>
               <Column size={2 / 7}>
                 <img src={catching} width="100%" alt="niño con pelotas de tenis" />
@@ -120,6 +134,15 @@ const HomePage = () => (
         </BlueTheme>
       </Box>
     </Wrapper>
+    <LightTheme>
+      <Gap verticalAlign>
+        <Container>
+          <H1>{SIX_YEARS_TITLE}</H1>
+          <P>{SIX_YEARS}</P>
+          <P>{SIX_YEARS_2}</P>
+        </Container>
+      </Gap>
+    </LightTheme>
   </Fragment>
 );
 
