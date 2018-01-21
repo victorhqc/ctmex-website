@@ -16,7 +16,6 @@ import {
 } from '../themes/utils';
 
 import Menu from '../components/Menu';
-import Footer from '../components/Footer';
 import Container from '../components/Container';
 import Row from '../components/Row';
 import Column from '../components/Column';
@@ -156,7 +155,6 @@ const HomePage = () => (
         </Row>
       </Gap>
     </WhiteTheme>
-    <Footer />
   </Fragment>
 );
 

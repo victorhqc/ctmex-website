@@ -1,5 +1,6 @@
 import App from './App';
 import HomePage from './pages/HomePage';
+import ContactPage from './pages/ContactPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default [
@@ -10,6 +11,10 @@ export default [
         ...HomePage,
         path: '/',
         exact: true,
+      },
+      {
+        ...ContactPage,
+        path: '/contact',
       },
       {
         ...NotFoundPage,

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { injectGlobal } from 'styled-components';
 import PropTypes from 'prop-types';
 import { renderRoutes } from 'react-router-config';
 import MainTheme from './themes/Main';
 import Container from './components/Container';
+import Footer from './components/Footer';
 
 import Gotham from '../assets/fonts/Gotham-Light.woff';
 import SourceSansProBlack from '../assets/fonts/Source-sans-pro-black.ttf';
@@ -27,12 +28,15 @@ injectGlobal`
 
 const App = ({ route }) => (
   <MainTheme>
-    <Container
-      noPadding
-      noMargin
-    >
-      {renderRoutes(route.routes)}
-    </Container>
+    <Fragment>
+      <Container
+        noPadding
+        noMargin
+      >
+        {renderRoutes(route.routes)}
+      </Container>
+      <Footer />
+    </Fragment>
   </MainTheme>
 );
 

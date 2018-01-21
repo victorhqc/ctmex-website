@@ -16,5 +16,8 @@
         "aspects": [ "noHref", "invalidHref", "preferButton" ]
       }
     ]
+  },
+  "globals": {
+    "google": true
   }
 }

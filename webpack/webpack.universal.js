@@ -5,6 +5,9 @@ const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const { imageminLoader } = require('imagemin-webpack');
 const imageminJpegtran = require('imagemin-jpegtran');
 const imageminJpegRecompress = require('imagemin-jpeg-recompress');
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 const path = require('path');
 const fs = require('fs');
@@ -160,6 +163,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(env),
+      'process.env.G_MAPS_KEY': JSON.stringify(process.env.G_MAPS_KEY),
     }),
   ],
 };
