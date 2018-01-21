@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -61,9 +60,12 @@ const Li = styled.li`
   cursor: pointer;
   border: 1px solid ${getBorderColor()};
   border-radius: 3px;
+  transition-property: border;
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
 
   &:hover {
-    border: 1px solid ${getBorderColor(true)}70;
+    border: 1px solid ${getBorderColor(true)};
   }
 
   a {

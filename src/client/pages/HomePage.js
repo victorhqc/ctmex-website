@@ -2,8 +2,8 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 
-import LightTheme from '../themes/Light';
-import DarkTheme from '../themes/Dark';
+import WhiteTheme from '../themes/White';
+import BlackTheme from '../themes/Black';
 import RedTheme from '../themes/Red';
 import BlueTheme from '../themes/Blue';
 import {
@@ -16,6 +16,7 @@ import {
 } from '../themes/utils';
 
 import Menu from '../components/Menu';
+import Footer from '../components/Footer';
 import Container from '../components/Container';
 import Row from '../components/Row';
 import Column from '../components/Column';
@@ -36,7 +37,7 @@ import {
   SIX_YEARS_2,
 } from '../../locales/es/home';
 
-import ctmexWhite from '../../assets/ctmex_white.svg';
+import logo from '../../assets/ctmex.svg';
 import ctmexCover from '../../assets/pictures/ctmex_cover.jpg';
 import kidsRunning from '../../assets/pictures/home_running.jpg';
 import catching from '../../assets/pictures/home_catching.jpg';
@@ -91,11 +92,11 @@ const HomePage = () => (
         content={KEYWORDS}
       />
     </Helmet>
-    <DarkTheme>
+    <BlackTheme>
       <Menu />
-    </DarkTheme>
+    </BlackTheme>
     <Background src={ctmexCover} height="60vh">
-      <Logo src={ctmexWhite} alt="ctmex_white_logo" width="150" />
+      <Logo src={logo} alt="ctmex logo" width="150" />
     </Background>
     <Wrapper>
       <Box>
@@ -132,7 +133,7 @@ const HomePage = () => (
         </BlueTheme>
       </Box>
     </Wrapper>
-    <LightTheme>
+    <WhiteTheme>
       <Gap verticalAlign>
         <Container>
           <H1>{SIX_YEARS_TITLE}</H1>
@@ -140,7 +141,8 @@ const HomePage = () => (
           <P>{SIX_YEARS_2}</P>
         </Container>
       </Gap>
-    </LightTheme>
+    </WhiteTheme>
+    <Footer />
   </Fragment>
 );
 

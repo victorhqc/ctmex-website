@@ -5,22 +5,22 @@ import baseTheme, { getColor } from './base';
 
 const theme = {
   ...baseTheme,
-  backgroundColor: getColor('white'),
-  color: getColor('black'),
+  backgroundColor: getColor('black'),
+  color: getColor('white'),
 };
 
-const LightTheme = ({ children }) => (
+const Black = ({ children }) => (
   <ThemeProvider theme={theme}>
     {Children.only(children)}
   </ThemeProvider>
 );
 
-LightTheme.defaultProps = {
+Black.defaultProps = {
   children: null,
 };
 
-LightTheme.propTypes = {
+Black.propTypes = {
   children: PropTypes.element,
 };
 
-export default LightTheme;
+export default Black;
