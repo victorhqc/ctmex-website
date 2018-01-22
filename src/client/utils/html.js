@@ -18,3 +18,5 @@ export const injectScript = (src, params = scriptParams()) => {
   script.defer = params.defer;
   document.body.appendChild(script);
 };
+
+export const getScreenSize = () => document.documentElement.clientWidth;

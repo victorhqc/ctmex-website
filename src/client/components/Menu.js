@@ -1,4 +1,6 @@
-import React from 'react';
+/* eslint react/no-did-mount-set-state: 0 */
+
+import React, { Fragment, Component } from 'react';
 import styled from 'styled-components';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -10,6 +12,7 @@ import {
   getFontSize,
   getFontFamily,
   getThemeColor,
+  getSize,
 } from '../themes/base';
 
 import {
@@ -17,20 +20,55 @@ import {
   setColor,
 } from '../themes/utils';
 
+import WhiteTheme from '../themes/White';
+
 import {
   routes,
 } from '../../locales/es/main';
 
-const Nav = styled.nav`
-  position: absolute;
-  top: ${getMargin('md')}px;
-  right: ${getMargin('md')}px;
-  ${mediaQuery('xs', `
-    top: ${getMargin('xs')}px;
-    right: ${getMargin('xs')}px;
-  `)}
+import {
+  getScreenSize,
+} from '../utils/html';
 
+const sharedStyles = `
+  position: absolute;
   z-index: 1;
+  top: ${getMargin('md')}px;
+`;
+
+const Nav = styled.nav`
+  ${sharedStyles}
+  right: ${getMargin('md')}px;
+`;
+
+const MobileNavWrapper = styled.div`
+  ${sharedStyles}
+  left: ${getMargin('md')}px;
+`;
+
+const MobileNav = styled.nav`
+  position: relative;
+  width: 1.5em;
+  height: 1.2em;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5em;
+    height: 0.25em;
+    background: ${getThemeColor};
+    box-shadow:
+      0 0.45em 0 0 ${getThemeColor},
+      0 0.9em 0 0 ${getThemeColor};
+  }
+`;
+
+const MobileWrapper = styled.div`
+  position: relative;
+  padding-top: calc(${getMargin('md')}px + 2em);
 `;
 
 const Ul = styled.ul`
@@ -42,6 +80,10 @@ const Ul = styled.ul`
 
   display: flex;
   ${setColor}
+
+  ${mediaQuery('sm', `
+    display: block;
+  `)}
 `;
 
 const isActive = ({ url, location }) => url === location.pathname;
@@ -80,12 +122,104 @@ const mapItems = (props, items) => map(items, item => (
   </Li>
 ));
 
-const Menu = props => (
-  <Nav>
-    <Ul>
-      {mapItems(props, routes)}
-    </Ul>
-  </Nav>
-);
+class Menu extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isVisible: false,
+      isMobileMenuVisible: false,
+      isMobile: false,
+    };
+
+    this.onResizeScreen = this.onResizeScreen.bind(this);
+    this.onToggleMobileMenu = this.onToggleMobileMenu.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.onResizeScreen);
+    this.onResizeScreen();
+
+    this.setState({
+      isVisible: true,
+    });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResizeScreen);
+  }
+
+  onToggleMobileMenu() {
+    this.setState(({ isMobileMenuVisible }) => ({
+      isMobileMenuVisible: !isMobileMenuVisible,
+    }));
+  }
+
+  onResizeScreen() {
+    if (getScreenSize() <= getSize('sm')) {
+      this.setState({
+        isMobile: true,
+      });
+      return;
+    }
+
+    this.setState({
+      isMobile: false,
+    });
+  }
+
+  renderMobile() {
+    const {
+      isMobileMenuVisible,
+    } = this.state;
+
+    const items = isMobileMenuVisible ? (
+      <Ul>
+        {mapItems(this.props, routes)}
+      </Ul>
+    ) : null;
+
+    return (
+      <WhiteTheme>
+        <Fragment>
+          <MobileNavWrapper>
+            <MobileNav
+              role="navigation"
+              onClick={this.onToggleMobileMenu}
+              onTouchEnd={this.onToggleMobileMenu}
+            />
+          </MobileNavWrapper>
+          <MobileWrapper>
+            {items}
+          </MobileWrapper>
+        </Fragment>
+      </WhiteTheme>
+    );
+  }
+
+  render() {
+    const {
+      isMobile,
+      isVisible,
+    } = this.state;
+
+    // Hide in SSR, need to show it after screen size is obtained
+    if (!isVisible) {
+      return null;
+    }
+
+    if (isMobile) {
+      return this.renderMobile();
+    }
+
+    return (
+      <Nav role="navigation">
+        <Ul>
+          {mapItems(this.props, routes)}
+        </Ul>
+      </Nav>
+    );
+  }
+}
 
 export default withRouter(Menu);
