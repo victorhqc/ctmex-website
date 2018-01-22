@@ -16,6 +16,7 @@ import {
   getMargin,
   getPadding,
   getColor,
+  getFontSize,
 } from '../themes/base';
 
 import {
@@ -41,18 +42,30 @@ const CONTACT_EMAIL = 'colegiodetenismexicano@gmail.com';
 const Form = styled.form`
   text-align: right;
 
+  ${mediaQuery('sm', `
+    text-align: center;
+  `)}
+
   .label {
     display: block;
     text-align: right;
     margin-top: ${getMargin('sm')}px;
     margin-bottom: ${getMargin('sm')}px;
 
+    ${mediaQuery('sm', `
+      text-align: center;
+    `)}
+
     span {
       vertical-align: top;
       margin-right: ${getMargin('md')}px;
 
-      ${mediaQuery('xs', `
+      ${mediaQuery('sm', `
+        display: block;
+        width: 100%;
         margin-right: 0;
+        margin-bottom: ${getMargin('xs')}px;
+        font-size: ${getFontSize('lg')}em;
       `)}
     }
   }
@@ -64,6 +77,10 @@ const Form = styled.form`
     border-radius: 4px;
     padding: ${getPadding('xs')}px ${getPadding('sm')};
     outline: none;
+
+    ${mediaQuery('sm', `
+      width: 80%;
+    `)}
   }
 
   textarea {

@@ -23,8 +23,9 @@ export const MARGIN = {
 export const FONT_SIZES = {
   sm: 0.8,
   md: 1,
-  lg: 2,
-  xl: 3,
+  lg: 1.5,
+  xl: 2,
+  xxl: 3,
 };
 
 export const FONT_FAMILIES = {

@@ -4,7 +4,7 @@ import { noMargin, setColor } from '../themes/utils';
 
 const H1 = styled.h1`
   font-family: ${getFontFamily('sourceSansPro')};
-  font-size: ${getFontSize('xl')}em;
+  font-size: ${getFontSize('xxl')}em;
   font-weight: bold;
 
   ${noMargin}
