@@ -55,8 +55,8 @@ const buildRoutes = items => (
 const Footer = () => (
   <footer>
     <BlackTheme>
-      <Container height="30vh" noMargin padding={getPadding('lg')}>
-        <Row>
+      <Container minHeight="30vh" noMargin padding={getPadding('lg')}>
+        <Row size="sm">
           <Column size={1 / 3}>
             <img src={logo} alt="ctmex white logo" height="100" />
           </Column>

@@ -14,7 +14,13 @@ import Map from '../components/Map';
 
 import {
   getMargin,
+  getPadding,
+  getColor,
 } from '../themes/base';
+
+import {
+  mediaQuery,
+} from '../themes/utils';
 
 import {
   CONTACT_US,
@@ -30,21 +36,62 @@ import {
   FORM_SEND,
 } from '../../locales/es/contact';
 
+const CONTACT_EMAIL = 'colegiodetenismexicano@gmail.com';
+
 const Form = styled.form`
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
+  text-align: right;
 
   .label {
     display: block;
+    text-align: right;
+    margin-top: ${getMargin('sm')}px;
+    margin-bottom: ${getMargin('sm')}px;
+
+    span {
+      vertical-align: top;
+      margin-right: ${getMargin('md')}px;
+
+      ${mediaQuery('xs', `
+        margin-right: 0;
+      `)}
+    }
   }
 
   input[type="text"],
   input[type="email"],
   input[type="number"] {
+    border: 1px solid ${getColor('gray')};
+    border-radius: 4px;
+    padding: ${getPadding('xs')}px ${getPadding('sm')};
+    outline: none;
+  }
 
+  textarea {
+    border: 1px solid ${getColor('gray')};
+    border-radius: 4px;
+  }
+
+  .button {
+    background-color: ${getColor('shamrock')};
+    color: ${getColor('white')};
+    padding: ${getPadding('sm')}px;
+    border-radius: 4px;
+    min-width: 125px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+
+    transition-property: background-color:
+    transition-duration: 150ms;
+    transition-timing-function: ease-in-out;
+
+    &:hover {
+      background-color: ${getColor('mountainMeadow')};
+    }
+
+    &:active {
+      background-color: ${getColor('jewel')};
+    }
   }
 `;
 
@@ -88,7 +135,9 @@ class ContactPage extends Component {
     return (
       <Form onSubmit={this.onSubmit}>
         <label className="label" htmlFor={FORM_NAME}>
-          {FORM_NAME}
+          <span>
+            {FORM_NAME}
+          </span>
           <input
             type="text"
             name={FORM_NAME}
@@ -98,7 +147,9 @@ class ContactPage extends Component {
           />
         </label>
         <label className="label" htmlFor={FORM_PHONE}>
-          {FORM_PHONE}
+          <span>
+            {FORM_PHONE}
+          </span>
           <input
             type="number"
             name={FORM_PHONE}
@@ -108,7 +159,9 @@ class ContactPage extends Component {
           />
         </label>
         <label className="label" htmlFor={FORM_EMAIL}>
-          {FORM_EMAIL}
+          <span>
+            {FORM_EMAIL}
+          </span>
           <input
             type="email"
             name={FORM_EMAIL}
@@ -118,7 +171,9 @@ class ContactPage extends Component {
           />
         </label>
         <label className="label" htmlFor={FORM_TITLE}>
-          {FORM_TITLE}
+          <span>
+            {FORM_TITLE}
+          </span>
           <input
             type="text"
             name={FORM_TITLE}
@@ -128,15 +183,19 @@ class ContactPage extends Component {
           />
         </label>
         <label className="label" htmlFor={FORM_BODY}>
-          {FORM_BODY}
+          <span>
+            {FORM_BODY}
+          </span>
           <textarea
+            cols="30"
+            rows="4"
             id={FORM_BODY}
             name={FORM_BODY}
             value={message}
             onChange={this.onChange('message')}
           />
         </label>
-        <input type="submit" value={FORM_SEND} />
+        <input className="button" type="submit" value={FORM_SEND} />
       </Form>
     );
   }
@@ -170,23 +229,24 @@ class ContactPage extends Component {
               <Map />
             </Container>
             <Container margin={getMargin('lg')}>
-              <Row>
-                <Column size={2 / 3}>
+              <Row size="sm">
+                <Column size={4 / 7}>
                   {this.renderForm()}
                 </Column>
-                <Column size={1 / 3}>
-                  <H3 tabIndex="0">
+                <Column size={1 / 7} />
+                <Column size={2 / 7}>
+                  <H3>
                     {PHONE}<br />
                     <small>445 123 123</small>
                   </H3>
-                  <H3 tabIndex="0">
+                  <H3>
                     {ADDRESS}<br />
                     <small>Querétaro, Qro. Mex.</small>
                   </H3>
                   <H3>
                     {EMAIL}<br />
                     <small>
-                      <A href="mailto:foo@bar.com">foo@bar.com</A>
+                      <A href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</A>
                     </small>
                   </H3>
                 </Column>

@@ -9,6 +9,7 @@ import {
   setColor,
   setWidth,
   setHeight,
+  setMinHeight,
   setBackground,
   setHide,
 } from '../themes/utils';
@@ -47,6 +48,7 @@ const Container = styled.div`
   ${setColor}
   ${setWidth}
   ${setHeight}
+  ${setMinHeight}
   ${setBackground}
   ${setHide}
 `;

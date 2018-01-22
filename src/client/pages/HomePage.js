@@ -66,7 +66,7 @@ const Box = styled.div`
 
 const Gap = styled.div`
     width: 100%;
-    height: 500px;
+    min-height: 500px;
     ${setVerticalAlign}
 `;
 
@@ -139,8 +139,8 @@ const HomePage = () => (
     </Wrapper>
     <WhiteTheme>
       <Gap verticalAlign>
-        <Row>
-          <Column size={2 / 5}>
+        <Row size="sm">
+          <Column size={2 / 5} verticalAlign>
             <Container>
               <img
                 width="100%"

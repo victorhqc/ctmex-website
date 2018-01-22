@@ -1,8 +1,9 @@
 export const SIZES = {
-  xs: 375,
-  sm: 768,
-  md: 1024,
-  lg: 1224,
+  xs: 480,
+  sm: 736,
+  md: 980,
+  lg: 1280,
+  xl: 1690,
 };
 
 export const PADDING = {
@@ -35,9 +36,15 @@ export const COLORS = {
   white: '#ffffff',
   black: '#333333',
   gray: '#cccccc',
+  // red
   carnation: '#f45a56',
+  // orange
   yellowOrange: '#ffbd48',
+  // green
   shamrock: '#50dd90',
+  mountainMeadow: '#26c870',
+  jewel: '#19844a',
+  //
   goldenFizz: '#e2ff3b',
   persianBlue: '#1946ba',
 };
