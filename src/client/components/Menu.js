@@ -98,21 +98,20 @@ const getBorderColor = (force = false) => (props) => {
 
 const Li = styled.li`
   margin: 0 ${getMargin('sm')}px;
-  padding: ${getPadding('xs')}px;
-  cursor: pointer;
-  border: 1px solid ${getBorderColor()};
-  border-radius: 3px;
-  transition-property: border;
-  transition-duration: 150ms;
-  transition-timing-function: ease-out;
-
-  &:hover {
-    border: 1px solid ${getBorderColor(true)};
-  }
 
   a {
     text-decoration: none;
     color: ${getThemeColor};
+    padding: ${getPadding('xs')}px;
+    border: 1px solid ${getBorderColor()};
+    border-radius: 3px;
+    transition-property: border;
+    transition-duration: 150ms;
+    transition-timing-function: ease-out;
+
+    &:hover {
+      border: 1px solid ${getBorderColor(true)};
+    }
   }
 `;
 
