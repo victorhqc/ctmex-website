@@ -17,6 +17,7 @@ import {
   getPadding,
   getColor,
   getFontSize,
+  getThemeColor,
 } from '../themes/base';
 
 import {
@@ -41,9 +42,14 @@ const CONTACT_EMAIL = 'colegiodetenismexicano@gmail.com';
 
 const Form = styled.form`
   text-align: right;
+  border-right: 1px solid ${getThemeColor}40;
+  margin-right: 3em;
+  padding-right: 3em;
 
   ${mediaQuery('sm', `
     text-align: center;
+    border: none;
+    margin: 0;
   `)}
 
   .label {
@@ -242,16 +248,15 @@ class ContactPage extends Component {
             <Container height="30vh" verticalAlign>
               <H1>{CONTACT_US}</H1>
             </Container>
-            <Container height="40vh" noMargin>
+            <Container height="50vh" noMargin>
               <Map />
             </Container>
             <Container margin={getMargin('lg')}>
               <Row size="sm">
-                <Column size={4 / 7}>
+                <Column size={2 / 3}>
                   {this.renderForm()}
                 </Column>
-                <Column size={1 / 7} />
-                <Column size={2 / 7}>
+                <Column size={1 / 3}>
                   <H3>
                     {PHONE}<br />
                     <small>445 123 123</small>
