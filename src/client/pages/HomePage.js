@@ -21,6 +21,7 @@ import H2 from '../components/H2';
 import P from '../components/P';
 import DoodleBackground from '../components/DoodleBackground';
 import Logo from '../components/Logo';
+import InformationBox from '../components/InformationBox';
 
 import {
   // ABOUT,
@@ -79,51 +80,33 @@ const HomePage = () => (
         content={KEYWORDS}
       />
     </Helmet>
-    <BlackTheme>
+    <ThemeProvider color="black">
       <Menu />
-    </BlackTheme>
+    </ThemeProvider>
     <Background src={ctmexCover} height="60vh">
       <Logo />
     </Background>
-    <Wrapper>
-      <Box>
-        <ThemeProvider color="red">
-          <Container noMargin background="transparent" zIndex={1}>
-            <DoodleBackground src={ballBackpackDoodle} />
-            <Row size="xs">
-              <Column size={1 / 3}>
-                <img src={kidsRunning} width="100%" alt="niños corriendo" />
-              </Column>
-              <Column size={2 / 3}>
-                <section>
-                  <H2>{WHAT_IS_TITLE}</H2>
-                  <P lead>{WHAT_IS}</P>
-                </section>
-              </Column>
-            </Row>
-          </Container>
-        </ThemeProvider>
-      </Box>
-    </Wrapper>
-    <Wrapper>
-      <Box>
-        <ThemeProvider color="blue">
-          <Container noMargin background="transparent" zIndex={1}>
-            <DoodleBackground src={raquetTrophyDoodle} />
-            <Row size="xs">
-              <Column size={5 / 7}>
-                <section>
-                  <H2>{REGISTRATION}</H2>
-                </section>
-              </Column>
-              <Column size={2 / 7}>
-                <img src={catching} width="100%" alt="niño con pelotas de tenis" />
-              </Column>
-            </Row>
-          </Container>
-        </ThemeProvider>
-      </Box>
-    </Wrapper>
+    <InformationBox
+      color="red"
+      textPosition="right"
+      src={kidsRunning}
+      alt="niños corriendo"
+      doodleSrc={ballBackpackDoodle}
+    >
+      <Fragment>
+        <H2>{WHAT_IS_TITLE}</H2>
+        <P lead>{WHAT_IS}</P>
+      </Fragment>
+    </InformationBox>
+    <InformationBox
+      color="blue"
+      textPosition="left"
+      src={catching}
+      alt="niño con pelotas de tenis"
+      doodleSrc={raquetTrophyDoodle}
+    >
+      <H2>{REGISTRATION}</H2>
+    </InformationBox>
     <ThemeProvider color="white">
       <Gap verticalAlign>
         <Row size="sm">

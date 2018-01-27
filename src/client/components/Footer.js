@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import map from 'lodash/map';
 import { Link } from 'react-router-dom';
 
-import BlackTheme from '../themes/Black';
+import ThemeProvider from '../themes/Provider';
 
 import {
   getThemeColor,
@@ -54,7 +54,7 @@ const buildRoutes = items => (
 
 const Footer = () => (
   <footer>
-    <BlackTheme>
+    <ThemeProvider color="black">
       <Container minHeight="30vh" noMargin padding={getPadding('lg')}>
         <Row size="sm">
           <Column size={1 / 3}>
@@ -65,7 +65,7 @@ const Footer = () => (
           </Column>
         </Row>
       </Container>
-    </BlackTheme>
+    </ThemeProvider>
   </footer>
 );
 

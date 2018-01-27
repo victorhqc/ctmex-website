@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { injectGlobal } from 'styled-components';
 import PropTypes from 'prop-types';
 import { renderRoutes } from 'react-router-config';
-import MainTheme from './themes/Main';
+import ThemeProvider from './themes/Provider';
 import Container from './components/Container';
 import Footer from './components/Footer';
 
@@ -27,7 +27,7 @@ injectGlobal`
 `;
 
 const App = ({ route }) => (
-  <MainTheme>
+  <ThemeProvider>
     <Fragment>
       <Container
         noPadding
@@ -37,7 +37,7 @@ const App = ({ route }) => (
       </Container>
       <Footer />
     </Fragment>
-  </MainTheme>
+  </ThemeProvider>
 );
 
 App.propTypes = {

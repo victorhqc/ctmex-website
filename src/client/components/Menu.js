@@ -20,7 +20,7 @@ import {
   setColor,
 } from '../themes/utils';
 
-import WhiteTheme from '../themes/White';
+import ThemeProvider from '../themes/Provider';
 
 import {
   routes,
@@ -180,7 +180,7 @@ class Menu extends Component {
     ) : null;
 
     return (
-      <WhiteTheme>
+      <ThemeProvider color="white">
         <Fragment>
           <MobileNavWrapper>
             <MobileNav
@@ -192,7 +192,7 @@ class Menu extends Component {
             {items}
           </MobileWrapper>
         </Fragment>
-      </WhiteTheme>
+      </ThemeProvider>
     );
   }
 

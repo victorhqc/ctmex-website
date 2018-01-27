@@ -1,6 +1,6 @@
 import React, { Children } from 'react';
 import PropTypes from 'prop-types';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider as StyledThemeProvider } from 'styled-components';
 import baseTheme, { getColor } from './base';
 
 const themeColor = (color) => {
@@ -40,20 +40,24 @@ const themeColor = (color) => {
   }
 };
 
-const whiteTheme = ({ children, color }) => (
-  <ThemeProvider
+const ThemeProvider = ({ children, color }) => (
+  <StyledThemeProvider
     theme={{
       ...baseTheme,
       ...themeColor(color),
     }}
   >
     {Children.only(children)}
-  </ThemeProvider>
+  </StyledThemeProvider>
 );
 
-whiteTheme.propTypes = {
-  children: PropTypes.element.isRequired,
-  color: PropTypes.string.isRequired,
+ThemeProvider.defaultProps = {
+  color: '',
 };
 
-export default whiteTheme;
+ThemeProvider.propTypes = {
+  children: PropTypes.element.isRequired,
+  color: PropTypes.string,
+};
+
+export default ThemeProvider;

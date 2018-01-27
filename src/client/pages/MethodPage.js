@@ -3,10 +3,7 @@ import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 import map from 'lodash/map';
 
-import WhiteTheme from '../themes/White';
-import BlackTheme from '../themes/Black';
-import RedTheme from '../themes/Red';
-import BlueTheme from '../themes/Blue';
+import ThemeProvider from '../themes/Provider';
 import {
   getColor,
 } from '../themes/base';
@@ -50,13 +47,13 @@ const MethodPage = () => (
 
       <meta name="description" content="Método del Colegio de tenis mexicano" />
     </Helmet>
-    <BlackTheme>
+    <ThemeProvider color="black">
       <Menu />
-    </BlackTheme>
+    </ThemeProvider>
     <Background src={methodCover} height="60vh">
       <Logo />
     </Background>
-    <WhiteTheme>
+    <ThemeProvider color="white">
       <Container>
         <H2>{INTRO_TITLE}</H2>
         <Row>
@@ -67,7 +64,7 @@ const MethodPage = () => (
           </Column>
         </Row>
       </Container>
-    </WhiteTheme>
+    </ThemeProvider>
   </Fragment>
 );
 
