@@ -5,7 +5,7 @@ import {
   NOT_FOUND,
 } from '../../constants';
 
-import WhiteTheme from '../themes/White';
+import ThemeProvider from '../themes/Provider';
 import Menu from '../components/Menu';
 import Container from '../components/Container';
 
@@ -30,14 +30,14 @@ const NotFoundPage = ({ staticContext }) => {
 
         <meta name="description" content="Colegio de tenis mexicano" />
       </Helmet>
-      <WhiteTheme>
+      <ThemeProvider color="white">
         <Fragment>
           <Menu />
           <Container height="65vh" verticalAlign>
             <h1>Ups, página no encontrada.</h1>
           </Container>
         </Fragment>
-      </WhiteTheme>
+      </ThemeProvider>
     </Fragment>
   );
 };

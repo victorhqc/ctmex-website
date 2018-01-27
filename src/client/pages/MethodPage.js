@@ -28,6 +28,7 @@ import Logo from '../components/Logo';
 import methodCover from '../../assets/pictures/method_cover.jpg';
 
 import {
+  INTRO_TITLE,
   INTRODUCTION,
 } from '../../locales/es/method';
 
@@ -55,13 +56,18 @@ const MethodPage = () => (
     <Background src={methodCover} height="60vh">
       <Logo />
     </Background>
-    <Row>
-      <Column size={2 / 3}>
-        {map(INTRODUCTION, (value, key) => (
-          <P key={key}>{value}</P>
-        ))}
-      </Column>
-    </Row>
+    <WhiteTheme>
+      <Container>
+        <H2>{INTRO_TITLE}</H2>
+        <Row>
+          <Column size={2 / 3}>
+            {map(INTRODUCTION, (value, key) => (
+              <P lead key={key}>{value}</P>
+            ))}
+          </Column>
+        </Row>
+      </Container>
+    </WhiteTheme>
   </Fragment>
 );
 

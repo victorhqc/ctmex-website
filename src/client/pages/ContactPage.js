@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 
-import WhiteTheme from '../themes/White';
+import ThemeProvider from '../themes/Provider';
 import Menu from '../components/Menu';
 import A from '../components/A';
 import H1 from '../components/H1';
@@ -242,7 +242,7 @@ class ContactPage extends Component {
 
           <meta name="description" content="Colegio de tenis mexicano" />
         </Helmet>
-        <WhiteTheme>
+        <ThemeProvider color="white">
           <Fragment>
             <Menu />
             <Container height="30vh" verticalAlign>
@@ -275,7 +275,7 @@ class ContactPage extends Component {
               </Row>
             </Container>
           </Fragment>
-        </WhiteTheme>
+        </ThemeProvider>
       </Fragment>
     );
   }

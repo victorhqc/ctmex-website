@@ -2,10 +2,8 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
 
-import WhiteTheme from '../themes/White';
-import BlackTheme from '../themes/Black';
-import RedTheme from '../themes/Red';
-import BlueTheme from '../themes/Blue';
+import ThemeProvider from '../themes/Provider';
+
 import {
   getColor,
 } from '../themes/base';
@@ -89,7 +87,7 @@ const HomePage = () => (
     </Background>
     <Wrapper>
       <Box>
-        <RedTheme>
+        <ThemeProvider color="red">
           <Container noMargin background="transparent" zIndex={1}>
             <DoodleBackground src={ballBackpackDoodle} />
             <Row size="xs">
@@ -104,12 +102,12 @@ const HomePage = () => (
               </Column>
             </Row>
           </Container>
-        </RedTheme>
+        </ThemeProvider>
       </Box>
     </Wrapper>
     <Wrapper>
       <Box>
-        <BlueTheme>
+        <ThemeProvider color="blue">
           <Container noMargin background="transparent" zIndex={1}>
             <DoodleBackground src={raquetTrophyDoodle} />
             <Row size="xs">
@@ -123,10 +121,10 @@ const HomePage = () => (
               </Column>
             </Row>
           </Container>
-        </BlueTheme>
+        </ThemeProvider>
       </Box>
     </Wrapper>
-    <WhiteTheme>
+    <ThemeProvider color="white">
       <Gap verticalAlign>
         <Row size="sm">
           <Column size={2 / 5} verticalAlign>
@@ -149,7 +147,7 @@ const HomePage = () => (
           </Column>
         </Row>
       </Gap>
-    </WhiteTheme>
+    </ThemeProvider>
   </Fragment>
 );
 

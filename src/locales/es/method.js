@@ -1,5 +1,7 @@
 /* eslint import/prefer-default-export: 0 */
 
+
+export const INTRO_TITLE = 'El método CTMX';
 export const INTRODUCTION = {
   part_1: `El método CTMEX está basado en una forma de enseñanza donde los
   jugadores aprenden jugando de una manera básica y simplificando las instrucciones; de esta manera
