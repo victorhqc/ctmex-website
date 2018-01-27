@@ -100,6 +100,7 @@ const Li = styled.li`
   margin: 0 ${getMargin('sm')}px;
 
   a {
+    display: block;
     text-decoration: none;
     color: ${getThemeColor};
     padding: ${getPadding('xs')}px;
@@ -184,7 +185,6 @@ class Menu extends Component {
           <MobileNavWrapper>
             <MobileNav
               role="navigation"
-              onClick={this.onToggleMobileMenu}
               onTouchEnd={this.onToggleMobileMenu}
             />
           </MobileNavWrapper>
