@@ -5,9 +5,6 @@ import { Helmet } from 'react-helmet';
 import ThemeProvider from '../themes/Provider';
 
 import {
-  getColor,
-} from '../themes/base';
-import {
   setVerticalAlign,
 } from '../themes/utils';
 
@@ -19,7 +16,6 @@ import Background from '../components/Background';
 import H1 from '../components/H1';
 import H2 from '../components/H2';
 import P from '../components/P';
-import DoodleBackground from '../components/DoodleBackground';
 import Logo from '../components/Logo';
 import InformationBox from '../components/InformationBox';
 
@@ -40,17 +36,6 @@ import kidsRunning from '../../assets/pictures/home_running.jpg';
 import catching from '../../assets/pictures/home_catching.jpg';
 import ballBackpackDoodle from '../../assets/doodles/ctmex_ball_backpack.svg';
 import raquetTrophyDoodle from '../../assets/doodles/ctmex_raquet_trophy.svg';
-
-const Wrapper = styled.div`
-  background: ${getColor('white')};
-  text-align: center;
-`;
-
-const Box = styled.div`
-  margin-top: 10px;
-  margin-left: 10px;
-  width: calc(100% - 20px);
-`;
 
 const Gap = styled.div`
     width: 100%;
