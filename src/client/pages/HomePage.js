@@ -8,8 +8,6 @@ import RedTheme from '../themes/Red';
 import BlueTheme from '../themes/Blue';
 import {
   getColor,
-  getMargin,
-  // getSize,
 } from '../themes/base';
 import {
   setVerticalAlign,
@@ -24,6 +22,7 @@ import H1 from '../components/H1';
 import H2 from '../components/H2';
 import P from '../components/P';
 import DoodleBackground from '../components/DoodleBackground';
+import Logo from '../components/Logo';
 
 import {
   // ABOUT,
@@ -36,22 +35,12 @@ import {
   SIX_YEARS_2,
 } from '../../locales/es/home';
 
-import logo from '../../assets/ctmex.svg';
 import imagotipo from '../../assets/ctmex_imagotipo.svg';
 import ctmexCover from '../../assets/pictures/ctmex_cover.jpg';
 import kidsRunning from '../../assets/pictures/home_running.jpg';
 import catching from '../../assets/pictures/home_catching.jpg';
 import ballBackpackDoodle from '../../assets/doodles/ctmex_ball_backpack.svg';
 import raquetTrophyDoodle from '../../assets/doodles/ctmex_raquet_trophy.svg';
-
-const margin = getMargin('md');
-
-const Logo = styled.img`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transform: translate3d(${margin}px, -${margin}px, 0);
-`;
 
 const Wrapper = styled.div`
   background: ${getColor('white')};
@@ -96,7 +85,7 @@ const HomePage = () => (
       <Menu />
     </BlackTheme>
     <Background src={ctmexCover} height="60vh">
-      <Logo src={logo} alt="ctmex logo" width="150" />
+      <Logo />
     </Background>
     <Wrapper>
       <Box>

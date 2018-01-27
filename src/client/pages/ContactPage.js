@@ -229,7 +229,7 @@ class ContactPage extends Component {
         <Helmet>
           <title>ctmex - contacto</title>
           <meta property="og:site_name" content="ctmex" />
-          <meta property="og:title" content="Colegio de tenis mexicano - contacto" />
+          <meta property="og:title" content="Colegio de tenis mexicano - Contacto" />
           <meta property="og:url" content="http://colegiodetenis.mx/contact" />
           <meta property="og:type" content="website" />
           <meta property="og:author" content="https://github.com/victorhqc" />
