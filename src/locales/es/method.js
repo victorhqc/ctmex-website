@@ -1,6 +1,3 @@
-/* eslint import/prefer-default-export: 0 */
-
-
 export const INTRO_TITLE = 'El método CTMX';
 export const INTRODUCTION = {
   part_1: `Está basado en una forma de enseñanza donde los
@@ -15,16 +12,50 @@ export const INTRODUCTION = {
   necesita cierto promedio para continuar al siguiente año escolar.`,
 };
 
-export const WHY_TITLE = '¿Porqué?';
-export const WHY = `Colegio de Tenis Mexicano nace de una necesidad que crece cada día en México,
-la necesidad de mejorar el nivel de tenis y la forma de enseñarse en nuestro país.
-Hace más de 30 años nuestro país pasó de ser un referente en el tenis a nivel mundial
-a un país con jugadores jóvenes con potencial que se quedaban a medio camino, esto debido a que
-el tenis, tanto la forma de enseñarlo, han evolucionado y nos hemos quedado atrás.
-En nuestra metodología creemos que un jugador profesional no nace, se hace! Y para esto
-el aspecto profesional debe de estar en cada aspecto, en cada etapa
-(iniciación, Junior, juvenil, amateur y profesional),
-tanto en cada instrucción del entrenador como en cada acción del jugador. También creemos
-que el tenis debe de llegar a muchas más personas para que así pueda florecer, y esto
-solamente se logrará haciéndolo accesible y sacándolo de los clubes privados donde solamente
-pocos niños y niñas lo juegan.`;
+
+export const SIX_YEARS_TITLE = '6 años de colegio, 3 fases';
+export const SIX_YEARS = {
+  part_1: `A través de estas etapas se crean una serie de pasos de desarrollo
+  a fin de que los jugadores progresen de acuerdo con su edad, su habilidad y confianza.`,
+  part_2: `Durante el proceso, el tamaño de la cancha, longitud de la raqueta,
+  velocidad de la pelota y duración de las clases se incrementa hasta que el jugador esté listo
+  para pasar a la cancha completa y usar las pelotas amarillas.`,
+};
+
+export const TABLE_HEADERS = {
+  phases: 'Étapas',
+  age: 'Edad',
+  ball: 'Pelota',
+  courtSize: 'Tamaño de cancha',
+  net: 'Red',
+  racketSize: 'Tamaño de raqueta',
+};
+
+export const PHASES = 'Étapas';
+
+export const PHASE_1_TITLE = 'De 4 - 7 años';
+export const PHASE_1_BALL = 'Velocidad y bote reducido';
+export const PHASE_1_PICTURE = 'Cancha de tenis, fase 1';
+export const PHASE_1_COURT_SIZE = '11m x 5.5m';
+export const PHASE_1_NET = '0.8m';
+export const PHASE_1_RACKET_SIZE = '17" a 21"';
+
+export const PHASE_2_TITLE = 'De 7 - 9 años';
+export const PHASE_2_BALL = 'Velocidad y bote reducido';
+export const PHASE_2_PICTURE = 'Cancha de tenis, fase 2';
+export const PHASE_2_COURT_SIZE = {
+  singles: '18.2m x 6.4m (singles)',
+  doubles: '18.2m x 8.2m (dobles)',
+};
+export const PHASE_2_NET = '0.9m al centro, 1m en postes';
+export const PHASE_2_RACKET_SIZE = '21" a 25"';
+
+export const PHASE_3_TITLE = 'De 9 - 11 años';
+export const PHASE_3_BALL = 'Velocidad y bote ligeramente reducido';
+export const PHASE_3_PICTURE = 'Cancha de tenis, fase 3';
+export const PHASE_3_COURT_SIZE = {
+  singles: '23.7m x 8.2m (singles)',
+  doubles: '23.7m x 11m (dobles)',
+};
+export const PHASE_3_NET = '0.9m al centro, 1m en postes';
+export const PHASE_3_RACKET_SIZE = '25" en adelante';

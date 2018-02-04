@@ -36,13 +36,6 @@ export const ORIGINS = `El proyecto Colegio de Tenis Mexicano nace en Francia y 
 de viajes de investigación y certificación por Europa, en países referentes del tenis como España,
 comparando los diversos sistemas, metodologías y escuelas de Europa con México`;
 
-export const SIX_YEARS_TITLE = '6 años de colegio, 3 fases';
-export const SIX_YEARS = `A través de estas etapas se crean una serie de pasos de desarrollo
-a fin de que los jugadores progresen de acuerdo con su edad, su habilidad y confianza.`;
-export const SIX_YEARS_2 = `Durante el proceso, el tamaño de la cancha, longitud de la raqueta,
-velocidad de la pelota y duración de las clases se incrementa hasta que el jugador esté listo
-para pasar a la cancha completa y usar las pelotas amarillas.`;
-
 export const HEADERS_TITLE = 'Colegio de tenis mexicano';
 
 

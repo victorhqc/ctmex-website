@@ -5,14 +5,7 @@ import { Helmet } from 'react-helmet';
 import ThemeProvider from '../themes/Provider';
 
 import {
-  getMargin,
-  getLineHeight,
-} from '../themes/base';
-
-import {
   setVerticalAlign,
-  setColor,
-  mediaQuery,
 } from '../themes/utils';
 
 import Menu from '../components/Menu';
@@ -33,13 +26,9 @@ import {
   WHAT_IS,
   ORIGINS_TITLE,
   ORIGINS,
-  SIX_YEARS_TITLE,
-  SIX_YEARS,
-  SIX_YEARS_2,
   PICTURE_KIDS_RUNNING,
   PICTURE_KIDS_RACKET,
   CTMEX_PICTURE,
-  PICTURE_WILSON,
   WHY_TITLE,
   WHY,
 } from '../../locales/es/home';
@@ -48,7 +37,6 @@ import imagotipo from '../../assets/ctmex_imagotipo.svg';
 import ctmexCover from '../../assets/pictures/ctmex_cover.jpg';
 import kidsRunning from '../../assets/pictures/home_running.jpg';
 import kidRaquet from '../../assets/pictures/home_kid_racket.jpg';
-import wilson from '../../assets/pictures/home_wilson.jpg';
 import ballBackpackDoodle from '../../assets/doodles/ctmex_ball_backpack.svg';
 import raquetTrophyDoodle from '../../assets/doodles/ctmex_raquet_trophy.svg';
 
@@ -59,7 +47,7 @@ const Gap = styled.div`
 `;
 
 const HomePage = () => (
-  <main>
+  <section>
     <Helmet>
       <title>ctmex</title>
       <meta property="og:site_name" content="ctmex" />
@@ -86,7 +74,7 @@ const HomePage = () => (
     <Background src={ctmexCover} height="60vh">
       <Logo />
     </Background>
-    <section id="about">
+    <Fragment>
       <InformationBox
         color="red"
         textPosition="left"
@@ -138,8 +126,8 @@ const HomePage = () => (
           </Row>
         </Gap>
       </ThemeProvider>
-    </section>
-  </main>
+    </Fragment>
+  </section>
 );
 
 export default {
