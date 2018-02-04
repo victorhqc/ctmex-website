@@ -38,6 +38,12 @@ import {
   FORM_TITLE,
   FORM_BODY,
   FORM_SEND,
+
+  SUCCESS_EMAIL_TITLE,
+  SUCCESS_EMAIL_MESSAGE,
+
+  FAILED_EMAIL_TITLE,
+  FAILED_EMAIL_MESSAGE,
 } from '../../locales/es/contact';
 
 const CONTACT_EMAIL = 'colegiodetenismexicano@gmail.com';
@@ -110,6 +116,11 @@ const Form = styled.form`
     transition-duration: 150ms;
     transition-timing-function: ease-in-out;
 
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
     &:hover {
       background-color: ${getColor('mountainMeadow')};
     }
@@ -120,16 +131,35 @@ const Form = styled.form`
   }
 `;
 
+const getResponseColor = (props) => {
+  if (props.success) {
+    return getColor('mountainMeadow');
+  }
+
+  return getColor('carnation');
+};
+
+const ResponseMessage = styled.div`
+  color: ${getResponseColor};
+`;
+
+const resetForm = () => ({
+  title: '',
+  message: '',
+  name: '',
+  phone: '',
+  email: '',
+});
+
 class ContactPage extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      title: '',
-      message: '',
-      name: '',
-      phone: '',
-      email: '',
+      data: resetForm(),
+      isFetching: false,
+      isSent: false,
+      isFailed: false,
     };
 
     this.onSubmit = this.onSubmit.bind(this);
@@ -137,26 +167,58 @@ class ContactPage extends Component {
   }
 
   onChange(keyName) {
-    // return e => console.log(e.target.value);
     return e => this.setState({
-      [keyName]: e.target.value,
+      data: {
+        ...this.state.data,
+        [keyName]: e.target.value,
+      },
     });
   }
 
   onSubmit(e) {
     e.preventDefault();
 
-    ajax.post('/email', this.state);
+    const {
+      data,
+      isFetching,
+    } = this.state;
+
+    if (isFetching) {
+      return;
+    }
+
+    this.setState({
+      isFetching: true,
+    });
+
+    ajax.post('/email', data)
+      .then(() => {
+        this.setState({
+          data: resetForm(),
+          isSent: true,
+          isFetching: false,
+        });
+      })
+      .catch(() => {
+        this.setState({
+          isFailed: true,
+          isFetching: false,
+        });
+      });
   }
 
   renderForm() {
+    const {
+      isFetching,
+    } = this.state;
+
     const {
       title,
       message,
       name,
       phone,
       email,
-    } = this.state;
+    } = this.state.data;
 
     return (
       <Form onSubmit={this.onSubmit}>
@@ -226,9 +288,41 @@ class ContactPage extends Component {
             required
           />
         </label>
-        <input className="button" type="submit" value={FORM_SEND} />
+        <input
+          className="button"
+          type="submit"
+          value={FORM_SEND}
+          disabled={isFetching}
+        />
       </Form>
     );
+  }
+
+  renderResponses() {
+    const {
+      isSent,
+      isFailed,
+    } = this.state;
+
+    if (isSent) {
+      return (
+        <ResponseMessage success>
+          <h3>{SUCCESS_EMAIL_TITLE}</h3>
+          <p>{SUCCESS_EMAIL_MESSAGE}</p>
+        </ResponseMessage>
+      );
+    }
+
+    if (isFailed) {
+      return (
+        <ResponseMessage>
+          <h3>{FAILED_EMAIL_TITLE}</h3>
+          <p>{FAILED_EMAIL_MESSAGE}</p>
+        </ResponseMessage>
+      );
+    }
+
+    return null;
   }
 
   render() {
@@ -281,6 +375,9 @@ class ContactPage extends Component {
                   </H3>
                 </Column>
               </Row>
+            </Container>
+            <Container>
+              {this.renderResponses()}
             </Container>
           </Fragment>
         </ThemeProvider>

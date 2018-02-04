@@ -9,3 +9,13 @@ export const FORM_EMAIL = 'Correo electrónico';
 export const FORM_TITLE = 'Título';
 export const FORM_BODY = 'Mensaje';
 export const FORM_SEND = 'Enviar';
+
+export const SUCCESS_EMAIL_TITLE = '¡Se ha enviado tu mensaje!';
+export const SUCCESS_EMAIL_MESSAGE = `
+Lo estaremos revisando pronto, te enviaremos un mensaje tan pronto como podamos ¡Gracias!
+`;
+
+export const FAILED_EMAIL_TITLE = 'Ups, No se ha podido enviar el mensaje';
+export const FAILED_EMAIL_MESSAGE = `
+  Intenta nuevamente más tarde, lamentamos no poder ayudarte en éste momento.
+`;
