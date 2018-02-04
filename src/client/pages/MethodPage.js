@@ -4,22 +4,14 @@ import { Helmet } from 'react-helmet';
 import map from 'lodash/map';
 
 import ThemeProvider from '../themes/Provider';
-import {
-  getColor,
-} from '../themes/base';
-import {
-  setVerticalAlign,
-} from '../themes/utils';
 
 import Menu from '../components/Menu';
 import Container from '../components/Container';
 import Row from '../components/Row';
 import Column from '../components/Column';
 import Background from '../components/Background';
-import H1 from '../components/H1';
 import H2 from '../components/H2';
 import P from '../components/P';
-import DoodleBackground from '../components/DoodleBackground';
 import Logo from '../components/Logo';
 
 import methodCover from '../../assets/pictures/method_cover.jpg';

@@ -4,7 +4,12 @@ import styled from 'styled-components';
 
 import {
   getColor,
+  getMargin,
 } from '../themes/base';
+
+import {
+  mediaQuery,
+} from '../themes/utils';
 
 import ThemeProvider from '../themes/Provider';
 
@@ -19,9 +24,22 @@ const Wrapper = styled.div`
 `;
 
 const Box = styled.div`
-  margin-top: 10px;
-  margin-left: 10px;
-  width: calc(100% - 20px);
+  margin-top: ${getMargin('md')}px;
+  margin-left: ${getMargin('md')}px;
+  width: calc(100% - ${getMargin('md') * 2}px);
+`;
+
+const Img = styled.img`
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  ${mediaQuery('xs', `
+    position: relative;
+    max-height: 40vh;
+  `)}
 `;
 
 class InformationBox extends Component {
@@ -59,7 +77,7 @@ class InformationBox extends Component {
     return this.renderWrapper((
       <Row size="xs">
         <Column size={1 / 3}>
-          <img src={src} width="100%" alt={alt} />
+          <Img src={src} alt={alt} />
         </Column>
         <Column size={2 / 3}>
           <section>
@@ -85,7 +103,7 @@ class InformationBox extends Component {
           </section>
         </Column>
         <Column size={1 / 3}>
-          <img src={src} width="100%" alt={alt} />
+          <Img src={src} alt={alt} />
         </Column>
       </Row>
     ));

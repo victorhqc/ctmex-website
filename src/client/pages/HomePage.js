@@ -5,7 +5,14 @@ import { Helmet } from 'react-helmet';
 import ThemeProvider from '../themes/Provider';
 
 import {
+  getMargin,
+  getLineHeight,
+} from '../themes/base';
+
+import {
   setVerticalAlign,
+  setColor,
+  mediaQuery,
 } from '../themes/utils';
 
 import Menu from '../components/Menu';
@@ -43,6 +50,20 @@ const Gap = styled.div`
     ${setVerticalAlign}
 `;
 
+const InfoContainer = styled.div`
+  text-align: left;
+  line-height: ${getLineHeight('lg')};
+  width: calc(${props => props.width} - ${props => (props.marginLeft || 0) + (props.marginRight || 0)}px);
+  margin-right: ${props => props.marginRight || 0}px;
+  margin-left: ${props => props.marginLeft || 0}px;
+  ${setColor}
+
+  ${mediaQuery('xs', `
+    width: 100%;
+    margin: 0 ${getMargin('xs')}px;
+  `)}
+`;
+
 const HomePage = () => (
   <Fragment>
     <Helmet>
@@ -73,19 +94,19 @@ const HomePage = () => (
     </Background>
     <InformationBox
       color="red"
-      textPosition="right"
+      textPosition="left"
       src={kidsRunning}
       alt="niños corriendo"
       doodleSrc={ballBackpackDoodle}
     >
-      <Fragment>
-        <H2>{WHAT_IS_TITLE}</H2>
+      <InfoContainer width="70%" marginLeft={60}>
+        <H1>{WHAT_IS_TITLE}</H1>
         <P lead>{WHAT_IS}</P>
-      </Fragment>
+      </InfoContainer>
     </InformationBox>
     <InformationBox
       color="blue"
-      textPosition="left"
+      textPosition="right"
       src={catching}
       alt="niño con pelotas de tenis"
       doodleSrc={raquetTrophyDoodle}
@@ -105,13 +126,13 @@ const HomePage = () => (
             </Container>
           </Column>
           <Column size={3 / 5}>
-            <Container textAlign="right">
+            <InfoContainer marginLeft={80} width="80%">
               <section>
                 <H1>{SIX_YEARS_TITLE}</H1>
                 <P lead>{SIX_YEARS}</P>
                 <P lead>{SIX_YEARS_2}</P>
               </section>
-            </Container>
+            </InfoContainer>
           </Column>
         </Row>
       </Gap>
