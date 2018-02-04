@@ -10,6 +10,7 @@ import {
   getFontSize,
   getMargin,
   getPadding,
+  getColor,
 } from '../themes/base';
 
 import Row from './Row';
@@ -52,15 +53,20 @@ const buildRoutes = items => (
   </Ul>
 );
 
+const Img = styled.img`
+  margin-left: ${getMargin('xl')}px;
+  margin-top: ${getMargin('xl')}px;
+`;
+
 const Footer = () => (
   <footer>
     <ThemeProvider color="black">
       <Container minHeight="30vh" noMargin padding={getPadding('lg')}>
         <Row size="sm">
-          <Column size={1 / 3}>
-            <img src={logo} alt="ctmex white logo" height="100" />
+          <Column size={1 / 2}>
+            <Img src={logo} alt="ctmex white logo" height="100" />
           </Column>
-          <Column size={1 / 3}>
+          <Column size={1 / 2}>
             {buildRoutes(routes)}
           </Column>
         </Row>
