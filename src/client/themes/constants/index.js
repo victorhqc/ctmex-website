@@ -47,6 +47,7 @@ export const COLORS = {
   carnation: '#f45a56',
   // orange
   yellowOrange: '#ffbd48',
+  seaBuckthorn: '#fab531',
   // green
   shamrock: '#50dd90',
   mountainMeadow: '#26c870',

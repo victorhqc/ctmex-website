@@ -17,7 +17,7 @@ const Background = styled.div`
   z-index: ${props => props.zIndex || ''};
 
   background-image: ${props => `url(${props.src})` || ''};
-  background-position: 'center';
+  background-position: ${props => props.backgroundPosition || 'center'};
   background-size: cover;
   ${setMinHeight};
   ${setHide};

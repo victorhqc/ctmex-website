@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 import {
   getColor,
-  getMargin,
 } from '../themes/base';
 
 import {
@@ -13,20 +12,15 @@ import {
 
 import ThemeProvider from '../themes/Provider';
 
-import Container from '../components/Container';
-import Row from '../components/Row';
-import Column from '../components/Column';
-import DoodleBackground from '../components/DoodleBackground';
+import Container from './Container';
+import Row from './Row';
+import Column from './Column';
+import DoodleBackground from './DoodleBackground';
+import Box from './Box';
 
 const Wrapper = styled.div`
   background: ${getColor('white')};
   text-align: center;
-`;
-
-const Box = styled.div`
-  margin-top: ${getMargin('md')}px;
-  margin-left: ${getMargin('md')}px;
-  width: calc(100% - ${getMargin('md') * 2}px);
 `;
 
 const Img = styled.img`

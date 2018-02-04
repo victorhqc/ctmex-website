@@ -23,6 +23,12 @@ const themeColor = (color) => {
         color: getColor('white'),
       };
 
+    case 'yellow':
+      return {
+        backgroundColor: getColor('seaBuckthorn'),
+        color: getColor('white'),
+      };
+
     case 'black':
       return {
         backgroundColor: getColor('black'),
