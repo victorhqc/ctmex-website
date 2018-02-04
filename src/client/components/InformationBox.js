@@ -66,17 +66,17 @@ class InformationBox extends Component {
       src,
       alt,
       children,
+      leftSize,
+      rightSize,
     } = this.props;
 
     return this.renderWrapper((
       <Row size="xs">
-        <Column size={1 / 3}>
+        <Column size={leftSize || 1 / 3}>
           <Img src={src} alt={alt} />
         </Column>
-        <Column size={2 / 3}>
-          <section>
-            {children}
-          </section>
+        <Column size={rightSize || 2 / 3}>
+          {children}
         </Column>
       </Row>
     ));
@@ -87,16 +87,16 @@ class InformationBox extends Component {
       src,
       alt,
       children,
+      leftSize,
+      rightSize,
     } = this.props;
 
     return this.renderWrapper((
       <Row size="xs">
-        <Column size={2 / 3}>
-          <section>
-            {children}
-          </section>
+        <Column size={leftSize || 2 / 3}>
+          {children}
         </Column>
-        <Column size={1 / 3}>
+        <Column size={rightSize || 1 / 3}>
           <Img src={src} alt={alt} />
         </Column>
       </Row>
@@ -125,6 +125,8 @@ InformationBox.defaultProps = {
   src: null,
   alt: '',
   doodleSrc: null,
+  leftSize: 0,
+  rightSize: 0,
 };
 
 InformationBox.propTypes = {
@@ -134,6 +136,8 @@ InformationBox.propTypes = {
   alt: PropTypes.string,
   doodleSrc: PropTypes.string,
   children: PropTypes.element.isRequired,
+  leftSize: PropTypes.number,
+  rightSize: PropTypes.number,
 };
 
 export default InformationBox;

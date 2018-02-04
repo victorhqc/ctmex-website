@@ -80,10 +80,12 @@ const MethodPage = () => (
             </Column>
             <Column size={3 / 5}>
               <InfoContainer marginLeft={80} width="80%">
-                <H2>{INTRO_TITLE}</H2>
-                {map(INTRODUCTION, (value, key) => (
-                  <P lead key={key}>{value}</P>
-                ))}
+                <section>
+                  <H2>{INTRO_TITLE}</H2>
+                  {map(INTRODUCTION, (value, key) => (
+                    <P lead key={key}>{value}</P>
+                  ))}
+                </section>
               </InfoContainer>
             </Column>
           </Row>

@@ -39,12 +39,16 @@ import {
   PICTURE_KIDS_RUNNING,
   PICTURE_KIDS_RACKET,
   CTMEX_PICTURE,
+  PICTURE_WILSON,
+  WHY_TITLE,
+  WHY,
 } from '../../locales/es/home';
 
 import imagotipo from '../../assets/ctmex_imagotipo.svg';
 import ctmexCover from '../../assets/pictures/ctmex_cover.jpg';
 import kidsRunning from '../../assets/pictures/home_running.jpg';
 import kidRaquet from '../../assets/pictures/home_kid_racket.jpg';
+import wilson from '../../assets/pictures/home_wilson.jpg';
 import ballBackpackDoodle from '../../assets/doodles/ctmex_ball_backpack.svg';
 import raquetTrophyDoodle from '../../assets/doodles/ctmex_raquet_trophy.svg';
 
@@ -55,7 +59,7 @@ const Gap = styled.div`
 `;
 
 const HomePage = () => (
-  <Fragment>
+  <main>
     <Helmet>
       <title>ctmex</title>
       <meta property="og:site_name" content="ctmex" />
@@ -82,55 +86,60 @@ const HomePage = () => (
     <Background src={ctmexCover} height="60vh">
       <Logo />
     </Background>
-    <InformationBox
-      color="red"
-      textPosition="left"
-      src={kidsRunning}
-      alt={PICTURE_KIDS_RUNNING}
-      doodleSrc={ballBackpackDoodle}
-    >
-      <InfoContainer width="70%" marginLeft={60}>
-        <H1>{WHAT_IS_TITLE}</H1>
-        <P lead>{WHAT_IS}</P>
-      </InfoContainer>
-    </InformationBox>
-    <InformationBox
-      color="blue"
-      textPosition="right"
-      src={kidRaquet}
-      alt={PICTURE_KIDS_RACKET}
-      doodleSrc={raquetTrophyDoodle}
-    >
-      <InfoContainer width="70%" marginLeft={60}>
-        <H1>{ORIGINS_TITLE}</H1>
-        <P lead>{ORIGINS}</P>
-      </InfoContainer>
-    </InformationBox>
-    <ThemeProvider color="white">
-      <Gap verticalAlign>
-        <Row size="sm">
-          <Column size={2 / 5} verticalAlign>
-            <Container>
-              <img
-                width="100%"
-                src={imagotipo}
-                alt={CTMEX_PICTURE}
-              />
-            </Container>
-          </Column>
-          <Column size={3 / 5}>
-            <InfoContainer marginLeft={80} width="80%">
-              <section>
-                <H1>{SIX_YEARS_TITLE}</H1>
-                <P lead>{SIX_YEARS}</P>
-                <P lead>{SIX_YEARS_2}</P>
-              </section>
-            </InfoContainer>
-          </Column>
-        </Row>
-      </Gap>
-    </ThemeProvider>
-  </Fragment>
+    <section id="about">
+      <InformationBox
+        color="red"
+        textPosition="left"
+        src={kidsRunning}
+        alt={PICTURE_KIDS_RUNNING}
+        doodleSrc={ballBackpackDoodle}
+      >
+        <InfoContainer width="70%" marginLeft={60}>
+          <article id="what-is">
+            <H1>{WHAT_IS_TITLE}</H1>
+            <P lead>{WHAT_IS}</P>
+          </article>
+        </InfoContainer>
+      </InformationBox>
+      <InformationBox
+        color="blue"
+        textPosition="right"
+        src={kidRaquet}
+        alt={PICTURE_KIDS_RACKET}
+        doodleSrc={raquetTrophyDoodle}
+      >
+        <InfoContainer width="70%" marginLeft={60}>
+          <article id="origins">
+            <H1>{ORIGINS_TITLE}</H1>
+            <P lead>{ORIGINS}</P>
+          </article>
+        </InfoContainer>
+      </InformationBox>
+      <ThemeProvider color="white">
+        <Gap verticalAlign>
+          <Row size="sm">
+            <Column size={3 / 4}>
+              <InfoContainer marginLeft={80} width="90%">
+                <article id="why">
+                  <H1>{WHY_TITLE}</H1>
+                  <P lead>{WHY}</P>
+                </article>
+              </InfoContainer>
+            </Column>
+            <Column size={1 / 4} verticalAlign>
+              <Container>
+                <img
+                  width="100%"
+                  src={imagotipo}
+                  alt={CTMEX_PICTURE}
+                />
+              </Container>
+            </Column>
+          </Row>
+        </Gap>
+      </ThemeProvider>
+    </section>
+  </main>
 );
 
 export default {
