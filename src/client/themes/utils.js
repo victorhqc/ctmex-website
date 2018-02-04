@@ -106,8 +106,8 @@ export const setMinHeight = ({ minHeight }) => {
   return `min-height: ${minHeight};`;
 };
 
-export const setBackground = ({ theme, background }) => {
-  if (!background && !theme.backgroundColor) {
+export const setBackground = ({ noBackground, theme, background }) => {
+  if (noBackground || (!background && !theme.backgroundColor)) {
     return '';
   }
 
