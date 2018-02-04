@@ -7,17 +7,19 @@ export const SIZES = {
 };
 
 export const PADDING = {
-  xs: 6,
-  sm: 12,
-  md: 24,
-  lg: 36,
+  xs: 5,
+  sm: 8,
+  md: 13,
+  lg: 21,
+  xl: 34,
 };
 
 export const MARGIN = {
-  xs: 6,
-  sm: 12,
-  md: 24,
-  lg: 36,
+  xs: 5,
+  sm: 8,
+  md: 13,
+  lg: 21,
+  xl: 34,
 };
 
 export const FONT_SIZES = {
@@ -26,6 +28,10 @@ export const FONT_SIZES = {
   lg: 1.5,
   xl: 2,
   xxl: 3,
+};
+
+export const LINE_HEIGHT = {
+  lg: 1.5,
 };
 
 export const FONT_FAMILIES = {

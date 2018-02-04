@@ -6,6 +6,7 @@ import {
 } from '../themes/utils';
 
 const Column = styled.div`
+  position: relative;
   width: ${props => `${(props.size || 1) * 100}%`};
 
   ${setVerticalAlign}

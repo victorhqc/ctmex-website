@@ -12,6 +12,8 @@ import Row from '../components/Row';
 import Column from '../components/Column';
 import Map from '../components/Map';
 
+import ajax from '../utils/ajax';
+
 import {
   getMargin,
   getPadding,
@@ -143,7 +145,8 @@ class ContactPage extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    console.log('state!', this.state);
+
+    ajax.post('/email', this.state);
   }
 
   renderForm() {
@@ -163,10 +166,11 @@ class ContactPage extends Component {
           </span>
           <input
             type="text"
-            name={FORM_NAME}
-            id={FORM_NAME}
+            name="name"
+            id="name"
             value={name}
             onChange={this.onChange('name')}
+            required
           />
         </label>
         <label className="label" htmlFor={FORM_PHONE}>
@@ -175,10 +179,11 @@ class ContactPage extends Component {
           </span>
           <input
             type="number"
-            name={FORM_PHONE}
-            id={FORM_PHONE}
+            name="phone"
+            id="phone"
             value={phone}
             onChange={this.onChange('phone')}
+            required
           />
         </label>
         <label className="label" htmlFor={FORM_EMAIL}>
@@ -187,10 +192,11 @@ class ContactPage extends Component {
           </span>
           <input
             type="email"
-            name={FORM_EMAIL}
-            id={FORM_EMAIL}
+            name="email"
+            id="email"
             value={email}
             onChange={this.onChange('email')}
+            required
           />
         </label>
         <label className="label" htmlFor={FORM_TITLE}>
@@ -199,10 +205,11 @@ class ContactPage extends Component {
           </span>
           <input
             type="text"
-            name={FORM_TITLE}
-            id={FORM_TITLE}
+            name="title"
+            id="title"
             value={title}
             onChange={this.onChange('title')}
+            required
           />
         </label>
         <label className="label" htmlFor={FORM_BODY}>
@@ -212,10 +219,11 @@ class ContactPage extends Component {
           <textarea
             cols="30"
             rows="4"
-            id={FORM_BODY}
-            name={FORM_BODY}
+            id="message"
+            name="message"
             value={message}
             onChange={this.onChange('message')}
+            required
           />
         </label>
         <input className="button" type="submit" value={FORM_SEND} />

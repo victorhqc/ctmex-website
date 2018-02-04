@@ -39,7 +39,6 @@ const Container = styled.div`
   position: relative;
   ${setZIndex};
   ${margin}
-  ${setMargin}
   ${setPadding}
   ${setVerticalAlign}
   ${setTextAlign}
