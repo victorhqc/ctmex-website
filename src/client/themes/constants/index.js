@@ -52,8 +52,7 @@ export const COLORS = {
   shamrock: '#50dd90',
   mountainMeadow: '#26c870',
   jewel: '#19844a',
-  //
-  goldenFizz: '#e2ff3b',
+  // blue
   persianBlue: '#1946ba',
 };
 

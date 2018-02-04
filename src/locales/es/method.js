@@ -36,7 +36,10 @@ export const PHASES = 'Étapas';
 export const PHASE_1_TITLE = 'De 4 - 7 años';
 export const PHASE_1_BALL = 'Velocidad y bote reducido';
 export const PHASE_1_PICTURE = 'Cancha de tenis, fase 1';
-export const PHASE_1_COURT_SIZE = '11m x 5.5m';
+export const PHASE_1_COURT_SIZE = {
+  only: '11m x 5.5m',
+  empty: '',
+};
 export const PHASE_1_NET = '0.8m';
 export const PHASE_1_RACKET_SIZE = '17" a 21"';
 

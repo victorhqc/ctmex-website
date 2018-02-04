@@ -34,8 +34,6 @@ import {
   SIX_YEARS_TITLE,
   SIX_YEARS,
 
-  PHASES,
-
   TABLE_HEADERS,
 
   PHASE_1_TITLE,
@@ -75,6 +73,11 @@ const Box = styled.div`
   margin-top: ${getMargin('md')};
 `;
 
+const ColBlue = styled.col`
+  background-color: ${getColor('persianBlue')}90;
+  color: ${getColor('white')};
+`;
+
 const ColRed = styled.col`
   background-color: ${getColor('carnation')}90;
   color: ${getColor('white')};
@@ -108,7 +111,7 @@ const MethodPage = () => (
 
       <meta name="description" content="Método del Colegio de tenis mexicano" />
     </Helmet>
-    <ThemeProvider color="black">
+    <ThemeProvider color="white">
       <Menu />
     </ThemeProvider>
     <Background
@@ -143,20 +146,17 @@ const MethodPage = () => (
       <Fragment>
         <InfoContainer marginLeft={80} width="80%">
           <article id="six-years">
-            <H2>{SIX_YEARS_TITLE}</H2>
+            <H1>{SIX_YEARS_TITLE}</H1>
             {map(SIX_YEARS, (value, key) => (
               <P lead key={key}>{value}</P>
             ))}
           </article>
         </InfoContainer>
-        <InfoContainer marginLeft={80} width="80%">
+        <Container>
           <section id="phases">
-            <header>
-              <H1>{PHASES}</H1>
-            </header>
             <table>
               <colgroup>
-                <col />
+                <ColBlue />
                 <ColRed />
                 <ColYellow />
                 <ColGreen />
@@ -186,7 +186,9 @@ const MethodPage = () => (
                   <td>{TABLE_HEADERS.courtSize}</td>
                   <td>
                     <img src={tennisPhase1} alt={PHASE_1_PICTURE} height="250" />
-                    <p>{PHASE_1_COURT_SIZE}</p>
+                    {map(PHASE_1_COURT_SIZE, (value, key) => (
+                      <p key={key}>{value}</p>
+                    ))}
                   </td>
                   <td>
                     <img src={tennisPhase2} alt={PHASE_2_PICTURE} height="250" />
@@ -216,7 +218,7 @@ const MethodPage = () => (
               </tbody>
             </table>
           </section>
-        </InfoContainer>
+        </Container>
       </Fragment>
     </ThemeProvider>
   </section>
