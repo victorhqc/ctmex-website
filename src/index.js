@@ -5,7 +5,7 @@ import { matchRoutes } from 'react-router-config';
 import Routes from './client/Routes';
 import server from './server';
 import ContextManager from './server/helpers/context';
-import sendEmail from './server/helpers/sendEmail';
+import emailConfig, { sendEmail } from './server/helpers/sendEmail';
 import {
   NOT_FOUND,
 } from './constants';
@@ -13,18 +13,22 @@ import {
 dotenv.config();
 const app = express();
 const PORT = process.env.port || 3000;
+const emailTransporter = emailConfig();
 
 app.use(express.static('public'));
 
 app.post('/email', (req, res) => {
-  if (!sendEmail()) {
-    res.status(500);
-    res.send({ error: true });
-    return;
-  }
-
-  res.status(200);
-  res.send({ sucess: true });
+  sendEmail(emailTransporter)
+    .then((response) => {
+      console.log('response', response);
+      res.status(200);
+      res.send({ sucess: true });
+    })
+    .catch((e) => {
+      console.log('error', e);
+      res.status(500);
+      res.send({ error: true });
+    });
 });
 
 app.get('*', (req, res) => {
