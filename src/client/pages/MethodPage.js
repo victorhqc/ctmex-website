@@ -7,8 +7,13 @@ import ThemeProvider from '../themes/Provider';
 
 import {
   getColor,
+  getPadding,
   getMargin,
 } from '../themes/base';
+
+import {
+  mediaQuery,
+} from '../themes/utils';
 
 import Menu from '../components/Menu';
 import Container from '../components/Container';
@@ -73,24 +78,86 @@ const Box = styled.div`
   margin-top: ${getMargin('md')};
 `;
 
-const ColBlue = styled.col`
-  background-color: ${getColor('persianBlue')}90;
-  color: ${getColor('white')};
+const notATable = `
+table, thead, tbody, th, tr, td {
+  display: block;
+}
+
+tbody {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Hide table headers (but not display: none;, for accessibility) */
+thead tr {
+  display: none;
+}
+
+tr {
+  width: 100%;
+  border: 1px solid ${getColor('white')};
+}
+
+td {
+  /* Behave  like a "row" */
+  border: none;
+  border-bottom: 1px solid ${getColor('white')};
+  position: relative;
+  width: 60%;
+  padding-left: 40%;
+}
+
+td:before {
+  display: block;
+  position: absolute;
+  width: 40%;
+  left: 0;
+}
+
+/*
+Label the data
+*/
+
+td:nth-of-type(1):before { content: "Étapa"; }
+td:nth-of-type(2):before { content: "Pelota"; }
+td:nth-of-type(3):before { content: "Tamaño de cancha"; }
+td:nth-of-type(4):before { content: "Red"; }
+td:nth-of-type(5):before { content: "Tamaño de raqueta"; }
 `;
 
-const ColRed = styled.col`
-  background-color: ${getColor('carnation')}90;
+const Table = styled.table`
   color: ${getColor('white')};
+  text-align: center;
+  font-size: 1.1em;
+
+  td,th {
+    padding: ${getPadding('lg')}px;
+  }
+
+  th {
+    background-color: ${getColor('persianBlue')};
+  }
+
+  tr:nth-child(1) {
+    background-color: ${getColor('carnation')};
+  }
+  tr:nth-child(2) {
+    background-color: ${getColor('seaBuckthorn')};
+  }
+  tr:nth-child(3) {
+    background-color: ${getColor('mountainMeadow')};
+  }
+
+  h2 {
+    color: ${getColor('white')};
+    margin: 0;
+  }
+
+  ${mediaQuery('sm', notATable)}
 `;
 
-const ColYellow = styled.col`
-  background-color: ${getColor('seaBuckthorn')}90;
-  color: ${getColor('white')};
-`;
-
-const ColGreen = styled.col`
-  background-color: ${getColor('mountainMeadow')}90;
-  color: ${getColor('white')};
+const SixyearsArticle = styled.article`
+  margin-bottom: ${getMargin('xl')}px;
 `;
 
 const MethodPage = () => (
@@ -145,78 +212,64 @@ const MethodPage = () => (
     <ThemeProvider color="white">
       <Fragment>
         <InfoContainer marginLeft={80} width="80%">
-          <article id="six-years">
+          <SixyearsArticle id="six-years">
             <H1>{SIX_YEARS_TITLE}</H1>
             {map(SIX_YEARS, (value, key) => (
               <P lead key={key}>{value}</P>
             ))}
-          </article>
+          </SixyearsArticle>
         </InfoContainer>
         <Container>
           <section id="phases">
-            <table>
-              <colgroup>
-                <ColBlue />
-                <ColRed />
-                <ColYellow />
-                <ColGreen />
-              </colgroup>
+            <Table>
               <thead>
                 <tr>
-                  <th>{TABLE_HEADERS.phases}</th>
-                  <th>
-                    <H2>{PHASE_1_TITLE}</H2>
-                  </th>
-                  <th>
-                    <H2>{PHASE_2_TITLE}</H2>
-                  </th>
-                  <th>
-                    <H2>{PHASE_3_TITLE}</H2>
-                  </th>
+                  <th><h2>{TABLE_HEADERS.phases}</h2></th>
+                  <th><h2>{TABLE_HEADERS.ball}</h2></th>
+                  <th><h2>{TABLE_HEADERS.courtSize}</h2></th>
+                  <th><h2>{TABLE_HEADERS.net}</h2></th>
+                  <th><h2>{TABLE_HEADERS.racketSize}</h2></th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>{TABLE_HEADERS.ball}</td>
+                <tr id="phase-1">
+                  <td><h2>{PHASE_1_TITLE}</h2></td>
                   <td>{PHASE_1_BALL}</td>
-                  <td>{PHASE_2_BALL}</td>
-                  <td>{PHASE_3_BALL}</td>
-                </tr>
-                <tr>
-                  <td>{TABLE_HEADERS.courtSize}</td>
                   <td>
                     <img src={tennisPhase1} alt={PHASE_1_PICTURE} height="250" />
                     {map(PHASE_1_COURT_SIZE, (value, key) => (
                       <p key={key}>{value}</p>
                     ))}
                   </td>
+                  <td>{PHASE_1_NET}</td>
+                  <td>{PHASE_1_RACKET_SIZE}</td>
+                </tr>
+                <tr id="phase-2">
+                  <td><h2>{PHASE_2_TITLE}</h2></td>
+                  <td>{PHASE_2_BALL}</td>
                   <td>
                     <img src={tennisPhase2} alt={PHASE_2_PICTURE} height="250" />
                     {map(PHASE_2_COURT_SIZE, (value, key) => (
                       <p key={key}>{value}</p>
                     ))}
                   </td>
+                  <td>{PHASE_2_NET}</td>
+                  <td>{PHASE_2_RACKET_SIZE}</td>
+                </tr>
+                <tr id="phase-3">
+                  <td><h2>{PHASE_3_TITLE}</h2></td>
+                  <td>{PHASE_3_BALL}</td>
                   <td>
                     <img src={tennisPhase3} alt={PHASE_3_PICTURE} height="250" />
                     {map(PHASE_3_COURT_SIZE, (value, key) => (
                       <p key={key}>{value}</p>
                     ))}
                   </td>
-                </tr>
-                <tr>
-                  <td>{TABLE_HEADERS.net}</td>
-                  <td>{PHASE_1_NET}</td>
-                  <td>{PHASE_2_NET}</td>
                   <td>{PHASE_3_NET}</td>
-                </tr>
-                <tr>
-                  <td>{TABLE_HEADERS.racketSize}</td>
-                  <td>{PHASE_1_RACKET_SIZE}</td>
-                  <td>{PHASE_2_RACKET_SIZE}</td>
                   <td>{PHASE_3_RACKET_SIZE}</td>
                 </tr>
               </tbody>
-            </table>
+            </Table>
           </section>
         </Container>
       </Fragment>
