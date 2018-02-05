@@ -71,7 +71,11 @@ const HomePage = () => (
     <ThemeProvider color="black">
       <Menu />
     </ThemeProvider>
-    <Background src={ctmexCover} height="60vh">
+    <Background
+      src={ctmexCover}
+      height="60vh"
+      backgroundPosition="0 25%"
+    >
       <Logo />
     </Background>
     <Fragment>
@@ -82,7 +86,7 @@ const HomePage = () => (
         alt={PICTURE_KIDS_RUNNING}
         doodleSrc={ballBackpackDoodle}
       >
-        <InfoContainer width="70%" marginLeft={60}>
+        <InfoContainer width="70%">
           <article id="what-is">
             <H1>{WHAT_IS_TITLE}</H1>
             <P lead>{WHAT_IS}</P>
@@ -96,7 +100,7 @@ const HomePage = () => (
         alt={PICTURE_KIDS_RACKET}
         doodleSrc={raquetTrophyDoodle}
       >
-        <InfoContainer width="70%" marginLeft={60}>
+        <InfoContainer width="70%">
           <article id="origins">
             <H1>{ORIGINS_TITLE}</H1>
             <P lead>{ORIGINS}</P>
@@ -107,7 +111,7 @@ const HomePage = () => (
         <Gap verticalAlign>
           <Row size="sm">
             <Column size={3 / 4}>
-              <InfoContainer marginLeft={80} width="90%">
+              <InfoContainer width="90%">
                 <article id="why">
                   <H1>{WHY_TITLE}</H1>
                   <P lead>{WHY}</P>

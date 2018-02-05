@@ -13,9 +13,8 @@ import {
 const InfoContainer = styled.div`
   text-align: left;
   line-height: ${getLineHeight('lg')};
-  width: calc(${props => props.width} - ${props => (props.marginLeft || 0) + (props.marginRight || 0)}px);
-  margin-right: ${props => props.marginRight || 0}px;
-  margin-left: ${props => props.marginLeft || 0}px;
+  width: ${props => props.width};
+  margin: 0 auto;
   ${setColor}
 
   ${mediaQuery('xs', `
