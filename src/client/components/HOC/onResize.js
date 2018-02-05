@@ -19,6 +19,7 @@ const onResize = WrappedComponent => class OnResize extends Component {
   }
 
   componentDidMount() {
+    this.onResize();
     window.addEventListener('resize', this.onResize);
   }
 

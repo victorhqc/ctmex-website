@@ -149,7 +149,8 @@ class Menu extends Component {
     window.removeEventListener('resize', this.onResizeScreen);
   }
 
-  onToggleMobileMenu() {
+  onToggleMobileMenu(e) {
+    e.preventDefault();
     this.setState(({ isMobileMenuVisible }) => ({
       isMobileMenuVisible: !isMobileMenuVisible,
     }));
@@ -185,6 +186,7 @@ class Menu extends Component {
           <MobileNavWrapper>
             <MobileNav
               role="navigation"
+              onClick={this.onToggleMobileMenu}
               onTouchEnd={this.onToggleMobileMenu}
             />
           </MobileNavWrapper>
