@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Helmet } from 'react-helmet';
@@ -50,6 +50,7 @@ const TennisDoodle = styled.div`
 
 const Box = styled.div`
   margin-top: ${getMargin('md')};
+  margin-bottom: ${getMargin('md')};
 `;
 
 const SixyearsArticle = styled.article`
@@ -108,7 +109,7 @@ const MethodPage = ({
       </Box>
     </ThemeProvider>
     <ThemeProvider color="white">
-      <Fragment>
+      <Box>
         <InfoContainer width="80%">
           <SixyearsArticle id="six-years">
             <H1>{SIX_YEARS_TITLE}</H1>
@@ -122,7 +123,7 @@ const MethodPage = ({
             {isSm ? <MethodMobileTable /> : <MethodTable />}
           </section>
         </Container>
-      </Fragment>
+      </Box>
     </ThemeProvider>
   </section>
 );
