@@ -10,7 +10,6 @@ import {
   getFontSize,
   getMargin,
   getPadding,
-  getColor,
 } from '../themes/base';
 
 import Row from './Row';
