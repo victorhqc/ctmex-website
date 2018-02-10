@@ -5,6 +5,7 @@ import { renderRoutes } from 'react-router-config';
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 import { Helmet } from 'react-helmet';
 import Routes from '../client/Routes';
+import favicon from '../../src/assets/favicon.png';
 
 const version = process.env.NODE_ENV === 'production' ? '[AIV]{version}[/AIV]' : 'development';
 const bundle = process.env.NODE_ENV === 'production' ? 'bundle.js' : 'bundle.dev.js';
@@ -27,6 +28,8 @@ export default ({ req, context }) => {
   <head>
     ${helmet.title.toString()}
     ${helmet.meta.toString()}
+    <link rel="shortcut icon" href="${favicon}" type="image/x-icon">
+    <meta charset="utf-8">
     <meta http-equiv="content-language" content="es">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
