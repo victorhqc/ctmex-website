@@ -30,12 +30,15 @@ const Title = styled.button`
   transition-duration: 400ms;
   transition-timing-function: ease-in-out;
   margin: 0;
+  background-color: ${getBackgroundColor};
+
+  h3 {
+    margin: 0;
+  }
 
   &:hover {
     background-color: #ccc;
   }
-
-  background-color: ${getBackgroundColor};
 }
 `;
 
@@ -47,41 +50,24 @@ const getDisplay = ({ isActive }) => {
   return 'block';
 };
 
-const Panel = styled.div`
+const contentStyle = `
   padding: 0 18px;
   background-color: white;
   overflow: hidden;
-  display: ${getDisplay};
   margin: ${getMargin('lg')}px 0;
   font-size: 1.2em;
   line-height: 1.5em;
-
-  ul {
-    margin: 0;
-    padding: 0;
-  }
-
-  p {
-    margin: 0;
-    padding: 0;
-  }
 `;
 
-const renderDescription = (description) => {
-  if (typeof description === 'string') {
-    return (
-      <p>{description}</p>
-    );
-  }
+const P = styled.p`
+  ${contentStyle}
+  display: ${getDisplay};
+`;
 
-  return (
-    <ul>
-      {map(description, (desc, index) => (
-        <li key={index}>{desc}</li>
-      ))}
-    </ul>
-  );
-};
+const Ul = styled.ul`
+  ${contentStyle}
+  display: ${getDisplay};
+`;
 
 const isSectionOpened = (section, openedSections) => indexOf(openedSections, section) >= 0;
 
@@ -129,6 +115,22 @@ class Accordion extends Component {
     return isSectionOpened(section, openedSections);
   }
 
+  renderDescription(section, description) {
+    if (typeof description === 'string') {
+      return (
+        <P isActive={this.isActive(section)}>{description}</P>
+      );
+    }
+
+    return (
+      <Ul isActive={this.isActive(section)}>
+        {map(description, (desc, index) => (
+          <li key={index}>{desc}</li>
+        ))}
+      </Ul>
+    );
+  }
+
   render() {
     const {
       elements,
@@ -137,28 +139,20 @@ class Accordion extends Component {
     return (
       <div>
         {map(elements, ({ title, description }, index) => (
-          <Fragment key={index}>
+          <article key={index}>
             <Title
               isActive={this.isActive(title)}
               onClick={this.onSectionClick(title)}
             >
               <h3>{title}</h3>
             </Title>
-            <Panel
-              isActive={this.isActive(title)}
-            >
-              {renderDescription(description)}
-            </Panel>
-          </Fragment>
+            {this.renderDescription(title, description)}
+          </article>
         ))}
       </div>
     );
   }
 }
-
-Accordion.defaultProps = {
-  elements: [],
-};
 
 Accordion.propTypes = {
   elements: PropTypes.arrayOf(PropTypes.shape({

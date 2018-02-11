@@ -1,13 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
 import ThemeProvider from '../themes/Provider';
 
-// import {
-//   getColor,
-//   getMargin,
-// } from '../themes/base';
+import {
+  getMargin,
+} from '../themes/base';
 
 import Menu from '../components/Menu';
 import Background from '../components/Background';
@@ -56,6 +55,11 @@ import {
 
 import withRouterPropTypes from '../../constants/propTypes/withRouter';
 
+const Box = styled.div`
+  margin-top: ${getMargin('md')};
+  margin-bottom: ${getMargin('md')};
+`;
+
 const FaqPage = ({ location }) => (
   <section>
     <Helmet
@@ -77,50 +81,52 @@ const FaqPage = ({ location }) => (
     <ThemeProvider color="white">
       <Container>
         <H1>{TITLE}</H1>
-        <Accordion
-          elements={[
-            {
-              title: WHAT_IS_CTMEX_TITLE,
-              description: WHAT_IS_CTMEX,
-            },
-            {
-              title: HOW_IS_IT_TITLE,
-              description: HOW_IS_IT,
-            },
-            {
-              title: WHO_IS_IT_AIMED_AT_TITLE,
-              description: WHO_IS_IT_AIMED_AT,
-            },
-            {
-              title: HOW_IS_THE_PROGRAM_TITLE,
-              description: HOW_IS_THE_PROGRAM,
-            },
-            {
-              title: HOW_ARE_THE_LEVELS_TITLE,
-              description: HOW_ARE_THE_LEVELS,
-            },
-            {
-              title: HOW_IS_EACH_PHASE_TITLE,
-              description: HOW_IS_EACH_PHASE,
-            },
-            {
-              title: COST_TITLE,
-              description: COST,
-            },
-            {
-              title: REGISTRATION_INCLUDES_TITLE,
-              description: REGISTRATION_INCLUDES,
-            },
-            {
-              title: SCHEDULE_TITLE,
-              description: SCHEDULE,
-            },
-            {
-              title: WHY_CHOOSE_CTMEX_TITLE,
-              description: WHY_CHOOSE_CTMEX,
-            },
-          ]}
-        />
+        <Box>
+          <Accordion
+            elements={[
+              {
+                title: WHAT_IS_CTMEX_TITLE,
+                description: WHAT_IS_CTMEX,
+              },
+              {
+                title: HOW_IS_IT_TITLE,
+                description: HOW_IS_IT,
+              },
+              {
+                title: WHO_IS_IT_AIMED_AT_TITLE,
+                description: WHO_IS_IT_AIMED_AT,
+              },
+              {
+                title: HOW_IS_THE_PROGRAM_TITLE,
+                description: HOW_IS_THE_PROGRAM,
+              },
+              {
+                title: HOW_ARE_THE_LEVELS_TITLE,
+                description: HOW_ARE_THE_LEVELS,
+              },
+              {
+                title: HOW_IS_EACH_PHASE_TITLE,
+                description: HOW_IS_EACH_PHASE,
+              },
+              {
+                title: COST_TITLE,
+                description: COST,
+              },
+              {
+                title: REGISTRATION_INCLUDES_TITLE,
+                description: REGISTRATION_INCLUDES,
+              },
+              {
+                title: SCHEDULE_TITLE,
+                description: SCHEDULE,
+              },
+              {
+                title: WHY_CHOOSE_CTMEX_TITLE,
+                description: WHY_CHOOSE_CTMEX,
+              },
+            ]}
+          />
+        </Box>
       </Container>
     </ThemeProvider>
   </section>
