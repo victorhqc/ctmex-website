@@ -55,7 +55,7 @@ const HomePage = ({ location }) => (
       description={DESCRIPTION}
       src={ctmexCover}
     />
-    <ThemeProvider color="black">
+    <ThemeProvider color="white">
       <Menu />
     </ThemeProvider>
     <Background
