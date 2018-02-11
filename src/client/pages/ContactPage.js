@@ -51,10 +51,9 @@ import {
 } from '../../locales/es/contact';
 
 import withRouterPropTypes from '../../constants/propTypes/withRouter';
+import ctmexCover from '../../assets/pictures/ctmex_cover.jpg';
 
 const CONTACT_EMAIL = 'colegiodetenismexicano@gmail.com';
-
-import ctmexCover from '../../assets/pictures/ctmex_cover.jpg';
 
 const Form = styled.form`
   text-align: right;

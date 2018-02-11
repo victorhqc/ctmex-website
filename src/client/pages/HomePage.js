@@ -13,7 +13,7 @@ import Container from '../components/Container';
 import Row from '../components/Row';
 import Column from '../components/Column';
 import Background from '../components/Background';
-import H1 from '../components/H1';
+import H2 from '../components/H2';
 import P from '../components/P';
 import Logo from '../components/Logo';
 import InformationBox from '../components/InformationBox';
@@ -75,7 +75,7 @@ const HomePage = ({ location }) => (
       >
         <InfoContainer width="70%">
           <article id="what-is">
-            <H1>{WHAT_IS_TITLE}</H1>
+            <H2>{WHAT_IS_TITLE}</H2>
             <P lead>{WHAT_IS}</P>
           </article>
         </InfoContainer>
@@ -89,7 +89,7 @@ const HomePage = ({ location }) => (
       >
         <InfoContainer width="70%">
           <article id="origins">
-            <H1>{ORIGINS_TITLE}</H1>
+            <H2>{ORIGINS_TITLE}</H2>
             <P lead>{ORIGINS}</P>
           </article>
         </InfoContainer>
@@ -99,10 +99,8 @@ const HomePage = ({ location }) => (
           <Row size="sm">
             <Column size={3 / 4}>
               <InfoContainer width="90%">
-                <article id="why">
-                  <H1>{WHY_TITLE}</H1>
-                  <P lead>{WHY}</P>
-                </article>
+                <H2>{WHY_TITLE}</H2>
+                <P lead>{WHY}</P>
               </InfoContainer>
             </Column>
             <Column size={1 / 4} verticalAlign>

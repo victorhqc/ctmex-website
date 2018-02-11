@@ -1,6 +1,6 @@
 export const TITLE = 'Método';
 export const DESCRIPTION = `6 años de colegio, 3 fases. A través de estas etapas se crean una serie
-de pasos de desarrollo a fin de que los jugadores progresen de acuerdo con su edad, su
+de pasos de desarrollo, a fin de que los jugadores progresen de acuerdo con su edad, su
 habilidad y confianza.`;
 
 export const INTRO_TITLE = 'El método ctmex';
@@ -8,22 +8,22 @@ export const INTRODUCTION = {
   part_1: `Está basado en una forma de enseñanza donde los
   jugadores aprenden jugando de una manera básica y simplificando las instrucciones; de esta manera
   el aprendizaje fluye de una manera natural. A diferencia de los sistemas tradicionales donde se
-  les repite incontables veces muchas instrucciones lo cual logra confusión y frustración. Gran
-  parte de nuestra metodología está basada en un manejo psicológico adecuado que cuida la forma de
-  desarrollarse del niño o niña. Específicamente se maneja un sistema de medición y evaluación el
+  les repite incontables veces muchas instrucciones, lo cual logra confusión y frustración. Gran
+  parte de nuestra metodología está basada en un manejo psicológico adecuado, que cuida la forma de
+  desarrollarse del niño o niña. Específicamente se maneja un sistema de medición y evaluación, el
   cual detecta fortalezas y áreas de oportunidad en los jugadores.`,
   part_2: `Al término de cada unidad se le entrega a los padres y madres de familia una boleta de
-  resultados donde se explica lo aprendido, así como su calificación por unidad. Como en todo
+  resultados, donde se explica lo aprendido, así como su calificación por unidad. Como en todo
   colegio se necesita cierto promedio para continuar al siguiente año escolar.`,
 };
 
 
 export const SIX_YEARS_TITLE = '6 años de colegio, 3 fases';
 export const SIX_YEARS = {
-  part_1: `A través de estas etapas se crean una serie de pasos de desarrollo
+  part_1: `A través de estas etapas se crean una serie de pasos de desarrollo,
   a fin de que los jugadores progresen de acuerdo con su edad, su habilidad y confianza.`,
   part_2: `Durante el proceso, el tamaño de la cancha, longitud de la raqueta,
-  velocidad de la pelota y duración de las clases se incrementa hasta que el jugador esté listo
+  velocidad de la pelota y duración de las clases, se incrementa hasta que el jugador esté listo
   para pasar a la cancha completa y usar las pelotas amarillas.`,
 };
 
