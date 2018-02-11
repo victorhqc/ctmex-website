@@ -14,6 +14,10 @@ export const routes = [
     url: '/registration',
   },
   {
+    label: 'Preguntas frecuentes',
+    url: '/faq',
+  },
+  {
     label: 'Contacto',
     url: '/contact',
   },

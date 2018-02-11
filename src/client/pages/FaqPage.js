@@ -14,16 +14,16 @@ import Background from '../components/Background';
 import Logo from '../components/Logo';
 import Helmet from '../components/Helmet';
 
-import registrationCover from '../../assets/pictures/ctmex_registration.jpg';
+import registrationCover from '../../assets/pictures/faq_cover.jpg';
 
 import {
   TITLE,
   DESCRIPTION,
-} from '../../locales/es/registration';
+} from '../../locales/es/faq';
 
 import withRouterPropTypes from '../../constants/propTypes/withRouter';
 
-const RegistrationPage = ({ location }) => (
+const FaqPage = ({ location }) => (
   <section>
     <Helmet
       title={TITLE}
@@ -37,17 +37,17 @@ const RegistrationPage = ({ location }) => (
     <Background
       src={registrationCover}
       height="60vh"
-      backgroundPosition="0 65%"
+      backgroundPosition="0 25%"
     >
       <Logo />
     </Background>
   </section>
 );
 
-RegistrationPage.propTypes = {
+FaqPage.propTypes = {
   ...withRouterPropTypes,
 };
 
 export default {
-  component: withRouter(RegistrationPage),
+  component: withRouter(FaqPage),
 };

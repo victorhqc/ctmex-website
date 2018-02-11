@@ -24,13 +24,13 @@ export default ({ req, context }) => {
 
   const helmet = Helmet.renderStatic();
 
-  return `<html>
+  return `<html lang="es-MX">
   <head>
     ${helmet.title.toString()}
     ${helmet.meta.toString()}
     <link rel="shortcut icon" href="${favicon}" type="image/x-icon">
     <meta charset="utf-8">
-    <meta http-equiv="content-language" content="es">
+    <meta http-equiv="content-language" content="es-MX">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
     ${styleTags}

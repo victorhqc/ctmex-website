@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
 import MethodPage from './pages/MethodPage';
 import RegistrationPage from './pages/RegistrationPage';
+import FaqPage from './pages/FaqPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default [
@@ -21,6 +22,10 @@ export default [
       {
         ...ContactPage,
         path: '/contact',
+      },
+      {
+        ...FaqPage,
+        path: '/faq',
       },
       {
         ...RegistrationPage,
