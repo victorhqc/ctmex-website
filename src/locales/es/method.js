@@ -3,7 +3,7 @@ export const DESCRIPTION = `6 años de colegio, 3 fases. A través de estas etap
 de pasos de desarrollo a fin de que los jugadores progresen de acuerdo con su edad, su
 habilidad y confianza.`;
 
-export const INTRO_TITLE = 'El método CTMX';
+export const INTRO_TITLE = 'El método ctmex';
 export const INTRODUCTION = {
   part_1: `Está basado en una forma de enseñanza donde los
   jugadores aprenden jugando de una manera básica y simplificando las instrucciones; de esta manera
@@ -12,9 +12,9 @@ export const INTRODUCTION = {
   parte de nuestra metodología está basada en un manejo psicológico adecuado que cuida la forma de
   desarrollarse del niño o niña. Específicamente se maneja un sistema de medición y evaluación el
   cual detecta fortalezas y áreas de oportunidad en los jugadores.`,
-  part_2: `Al término de cada unidad se le entrega a los padres y madres de familia una boleta de resultados
-  donde se explica lo aprendido, así como su calificación por unidad. Como en todo colegio se
-  necesita cierto promedio para continuar al siguiente año escolar.`,
+  part_2: `Al término de cada unidad se le entrega a los padres y madres de familia una boleta de
+  resultados donde se explica lo aprendido, así como su calificación por unidad. Como en todo
+  colegio se necesita cierto promedio para continuar al siguiente año escolar.`,
 };
 
 
@@ -67,3 +67,15 @@ export const PHASE_3_COURT_SIZE = {
 };
 export const PHASE_3_NET = '0.9m al centro, 1m en postes';
 export const PHASE_3_RACKET_SIZE = '25" en adelante';
+
+export const CLASSES_TITLE = 'Clases en ctmex';
+export const CLASSES = {
+  part_1: `Las clases son de una hora y media por día y se divide en dos partes; la clase de tenis,
+  aquí vemos pura técnica y se va perfeccionando día con día, se les enseña pequeños movimientos
+  que sean fáciles de captar y utilizamos equipo didáctico para hacer las clases más divertidas
+  y como los ejercicios se aprenden a base de muchas repeticiones también buscamos hacer
+  dinámicas diferentes para que los niños no lo sientan como siempre lo mismo.`,
+  part_2: `La segunda parte es de desarrollo físico y le damos la misma prioridad en cuanto al
+  tiempo que el tenis porque queremos hacer una cultura en los niños de que se me debe dar la
+  misma importancia el perfeccionar la técnica como lo es desarrollarse físicamente.`,
+};
