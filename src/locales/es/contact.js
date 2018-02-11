@@ -1,3 +1,7 @@
+export const TITLE = 'Contacto';
+export const DESCRIPTION = `¿Tienes alguna pregunta? Contáctanos por correo, teléfono o usa
+nuestro formulario de contacto. Además puedes revisar nuestra ubicación en el mapa.`;
+
 export const CONTACT_US = 'Contáctanos';
 export const PHONE = 'Teléfono';
 export const ADDRESS = 'Dirección';

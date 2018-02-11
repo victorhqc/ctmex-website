@@ -5,7 +5,7 @@ tennis in mexico, tennis en mexico, tenis queretaro, escuela de tenis en quereta
 colegio de tenis en queretaro
 `;
 
-export const ABOUT = `El primer colegio de tenis en México basado en un método de enseñanza
+export const DESCRIPTION = `El primer colegio de tenis en México basado en un método de enseñanza
 innovador con el cual el niño o niña aprende de acuerdo a su edad, tamaño y fuerza.
 ¡Si aprendemos de mejor manera, jugaremos mejor!`;
 
@@ -29,15 +29,10 @@ que el tenis debe de llegar a muchas más personas para que así pueda florecer,
 solamente se logrará haciéndolo accesible y sacándolo de los clubes privados donde solamente
 pocos niños y niñas lo juegan.`;
 
-export const REGISTRATION = 'Inscripciones';
-
 export const ORIGINS_TITLE = '¿Dónde nace?';
 export const ORIGINS = `El proyecto Colegio de Tenis Mexicano nace en Francia y surge a través
 de viajes de investigación y certificación por Europa, en países referentes del tenis como España,
 comparando los diversos sistemas, metodologías y escuelas de Europa con México`;
-
-export const HEADERS_TITLE = 'Colegio de tenis mexicano';
-
 
 export const PICTURE_KIDS_RUNNING = 'Niños corriendo';
 export const PICTURE_KIDS_RACKET = 'Niños practicando con raquetas';

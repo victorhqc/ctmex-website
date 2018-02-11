@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 import styled from 'styled-components';
-import { Helmet } from 'react-helmet';
 import map from 'lodash/map';
+import compose from 'lodash/fp/compose';
 
 import ThemeProvider from '../themes/Provider';
 
@@ -23,6 +24,7 @@ import Logo from '../components/Logo';
 import InfoContainer from '../components/InfoContainer';
 import MethodMobileTable from '../components/MethodMobileTable';
 import MethodTable from '../components/MethodTable';
+import Helmet from '../components/Helmet';
 
 import onResizeHOC from '../components/HOC/onResize';
 
@@ -30,12 +32,16 @@ import methodCover from '../../assets/pictures/method_cover.jpg';
 import yellowTennis from '../../assets/yellow_tennis.svg';
 
 import {
+  TITLE,
+  DESCRIPTION,
   INTRO_TITLE,
   INTRODUCTION,
 
   SIX_YEARS_TITLE,
   SIX_YEARS,
 } from '../../locales/es/method';
+
+import withRouterPropTypes from '../../constants/propTypes/withRouter';
 
 const TennisDoodle = styled.div`
   background-image: url(${yellowTennis});
@@ -59,24 +65,15 @@ const SixyearsArticle = styled.article`
 
 const MethodPage = ({
   isSm,
+  location,
 }) => (
   <section>
-    <Helmet>
-      <title>ctmex - Método</title>
-      <meta property="og:site_name" content="ctmex" />
-      <meta property="og:title" content="Método del Colegio de tenis mexicano" />
-      <meta property="og:url" content="http://colegiodetenis.mx/method" />
-      <meta property="og:type" content="website" />
-      <meta property="og:author" content="https://github.com/victorhqc" />
-
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:site" content="@colegiotenismx" />
-      <meta property="twitter:creator" content="https://github.com/victorhqc" />
-      <meta property="twitter:title" content="ctmex" />
-      <meta property="twitter:description" content="Método del Colegio de tenis mexicano" />
-
-      <meta name="description" content="Método del Colegio de tenis mexicano" />
-    </Helmet>
+    <Helmet
+      title={TITLE}
+      pathname={location.pathname}
+      description={DESCRIPTION}
+      src={methodCover}
+    />
     <ThemeProvider color="white">
       <Menu />
     </ThemeProvider>
@@ -130,8 +127,12 @@ const MethodPage = ({
 
 MethodPage.propTypes = {
   isSm: PropTypes.bool.isRequired,
+  ...withRouterPropTypes,
 };
 
 export default {
-  component: onResizeHOC(MethodPage),
+  component: compose(
+    onResizeHOC,
+    withRouter,
+  )(MethodPage),
 };

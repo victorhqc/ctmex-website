@@ -2,6 +2,7 @@ import App from './App';
 import HomePage from './pages/HomePage';
 import ContactPage from './pages/ContactPage';
 import MethodPage from './pages/MethodPage';
+import RegistrationPage from './pages/RegistrationPage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export default [
@@ -20,6 +21,10 @@ export default [
       {
         ...ContactPage,
         path: '/contact',
+      },
+      {
+        ...RegistrationPage,
+        path: '/registration',
       },
       {
         ...NotFoundPage,

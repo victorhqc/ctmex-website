@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
+import { withRouter } from 'react-router';
 import styled from 'styled-components';
-import { Helmet } from 'react-helmet';
 
 import ThemeProvider from '../themes/Provider';
 import Menu from '../components/Menu';
@@ -11,6 +11,7 @@ import Container from '../components/Container';
 import Row from '../components/Row';
 import Column from '../components/Column';
 import Map from '../components/Map';
+import Helmet from '../components/Helmet';
 
 import ajax from '../utils/ajax';
 
@@ -27,6 +28,9 @@ import {
 } from '../themes/utils';
 
 import {
+  TITLE,
+  DESCRIPTION,
+
   CONTACT_US,
   PHONE,
   ADDRESS,
@@ -46,7 +50,11 @@ import {
   FAILED_EMAIL_MESSAGE,
 } from '../../locales/es/contact';
 
+import withRouterPropTypes from '../../constants/propTypes/withRouter';
+
 const CONTACT_EMAIL = 'colegiodetenismexicano@gmail.com';
+
+import ctmexCover from '../../assets/pictures/ctmex_cover.jpg';
 
 const Form = styled.form`
   text-align: right;
@@ -326,24 +334,18 @@ class ContactPage extends Component {
   }
 
   render() {
+    const {
+      location,
+    } = this.props;
+
     return (
       <Fragment>
-        <Helmet>
-          <title>ctmex - contacto</title>
-          <meta property="og:site_name" content="ctmex" />
-          <meta property="og:title" content="Colegio de tenis mexicano - Contacto" />
-          <meta property="og:url" content="http://colegiodetenis.mx/contact" />
-          <meta property="og:type" content="website" />
-          <meta property="og:author" content="https://github.com/victorhqc" />
-
-          <meta property="twitter:card" content="summary_large_image" />
-          <meta property="twitter:site" content="@colegiotenismx" />
-          <meta property="twitter:creator" content="https://github.com/victorhqc" />
-          <meta property="twitter:title" content="ctmex" />
-          <meta property="twitter:description" content="Colegio de tenis mexicano" />
-
-          <meta name="description" content="Colegio de tenis mexicano" />
-        </Helmet>
+        <Helmet
+          title={TITLE}
+          description={DESCRIPTION}
+          pathname={location.pathname}
+          src={ctmexCover}
+        />
         <ThemeProvider color="white">
           <Fragment>
             <Menu />
@@ -386,6 +388,10 @@ class ContactPage extends Component {
   }
 }
 
+ContactPage.propTypes = {
+  ...withRouterPropTypes,
+};
+
 export default {
-  component: ContactPage,
+  component: withRouter(ContactPage),
 };

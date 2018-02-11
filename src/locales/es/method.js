@@ -1,3 +1,8 @@
+export const TITLE = 'Método';
+export const DESCRIPTION = `6 años de colegio, 3 fases. A través de estas etapas se crean una serie
+de pasos de desarrollo a fin de que los jugadores progresen de acuerdo con su edad, su
+habilidad y confianza.`;
+
 export const INTRO_TITLE = 'El método CTMX';
 export const INTRODUCTION = {
   part_1: `Está basado en una forma de enseñanza donde los

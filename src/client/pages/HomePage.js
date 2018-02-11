@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
+import { withRouter } from 'react-router';
 import styled from 'styled-components';
-import { Helmet } from 'react-helmet';
 
 import ThemeProvider from '../themes/Provider';
 
@@ -18,10 +18,10 @@ import P from '../components/P';
 import Logo from '../components/Logo';
 import InformationBox from '../components/InformationBox';
 import InfoContainer from '../components/InfoContainer';
+import Helmet from '../components/Helmet';
 
 import {
-  HEADERS_TITLE,
-  KEYWORDS,
+  DESCRIPTION,
   WHAT_IS_TITLE,
   WHAT_IS,
   ORIGINS_TITLE,
@@ -32,6 +32,8 @@ import {
   WHY_TITLE,
   WHY,
 } from '../../locales/es/home';
+
+import withRouterPropTypes from '../../constants/propTypes/withRouter';
 
 import imagotipo from '../../assets/ctmex_imagotipo.svg';
 import ctmexCover from '../../assets/pictures/ctmex_cover.jpg';
@@ -46,28 +48,13 @@ const Gap = styled.div`
     ${setVerticalAlign}
 `;
 
-const HomePage = () => (
+const HomePage = ({ location }) => (
   <section>
-    <Helmet>
-      <title>ctmex</title>
-      <meta property="og:site_name" content="ctmex" />
-      <meta property="og:title" content={HEADERS_TITLE} />
-      <meta property="og:url" content="http://colegiodetenis.mx" />
-      <meta property="og:type" content="website" />
-      <meta property="og:author" content="https://github.com/victorhqc" />
-
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:site" content="@colegiotenismx" />
-      <meta property="twitter:creator" content="https://github.com/victorhqc" />
-      <meta property="twitter:title" content="ctmex" />
-      <meta property="twitter:description" content={HEADERS_TITLE} />
-
-      <meta name="description" content={HEADERS_TITLE} />
-      <meta
-        name="keywords"
-        content={KEYWORDS}
-      />
-    </Helmet>
+    <Helmet
+      pathname={location.pathname}
+      description={DESCRIPTION}
+      src={ctmexCover}
+    />
     <ThemeProvider color="black">
       <Menu />
     </ThemeProvider>
@@ -134,6 +121,10 @@ const HomePage = () => (
   </section>
 );
 
+HomePage.propTypes = {
+  ...withRouterPropTypes,
+};
+
 export default {
-  component: HomePage,
+  component: withRouter(HomePage),
 };
