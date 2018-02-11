@@ -61,7 +61,7 @@ const HomePage = ({ location }) => (
     <Background
       src={ctmexCover}
       height="60vh"
-      backgroundPosition="0 25%"
+      backgroundPosition="0 15%"
     >
       <Logo />
     </Background>
