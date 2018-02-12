@@ -131,7 +131,6 @@ class Menu extends Component {
     super(props);
 
     this.state = {
-      isVisible: false,
       isMobileMenuVisible: false,
       isMobile: false,
     };
@@ -143,10 +142,6 @@ class Menu extends Component {
   componentDidMount() {
     window.addEventListener('resize', this.onResizeScreen);
     this.onResizeScreen();
-
-    this.setState({
-      isVisible: true,
-    });
   }
 
   componentWillUnmount() {
@@ -205,13 +200,7 @@ class Menu extends Component {
   render() {
     const {
       isMobile,
-      isVisible,
     } = this.state;
-
-    // Hide in SSR, need to show it after screen size is obtained
-    if (!isVisible) {
-      return null;
-    }
 
     if (isMobile) {
       return this.renderMobile();
