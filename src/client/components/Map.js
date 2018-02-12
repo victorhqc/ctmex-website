@@ -38,7 +38,7 @@ class Map extends Component {
     }
 
     window.initMap = initMap;
-    injectScript(`https://maps.googleapis.com/maps/api/js?key=${process.env.G_MAPS_KEY}&callback=initMap`);
+    injectScript(`https://maps.googleapis.com/maps/api/js?key=${process.env.G_MAPS_KEY}&callback=initMap&language=es-MX`);
   }
 
   render() {
