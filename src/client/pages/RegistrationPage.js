@@ -1,13 +1,18 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 
 import ThemeProvider from '../themes/Provider';
 
-// import {
-//   getColor,
-//   getMargin,
-// } from '../themes/base';
+import {
+  getPadding,
+  getMargin,
+} from '../themes/base';
+
+import {
+  setBackground,
+  setColor,
+} from '../themes/utils';
 
 import Menu from '../components/Menu';
 import Background from '../components/Background';
@@ -18,8 +23,12 @@ import H1 from '../components/H1';
 import H2 from '../components/H2';
 import H3 from '../components/H3';
 import P from '../components/P';
+import Row from '../components/Row';
+import DoodleBackground from '../components/DoodleBackground';
 
 import registrationCover from '../../assets/pictures/ctmex_registration.jpg';
+import ballBackpackDoodle from '../../assets/doodles/ctmex_ball_backpack.svg';
+import raquetTrophyDoodle from '../../assets/doodles/ctmex_raquet_trophy.svg';
 
 import {
   TITLE,
@@ -40,6 +49,23 @@ import {
 
 import withRouterPropTypes from '../../constants/propTypes/withRouter';
 
+const Column = styled.div`
+  position: relative;
+  width: ${100 / 3}%;
+  padding: ${getPadding('md')}px;
+  min-height: 200px;
+  ${setColor};
+  ${setBackground};
+`;
+
+const Box = styled.div`
+  margin: ${getMargin('md')}px 0;
+`;
+
+const Text = styled.article`
+  z-index: 1;
+`;
+
 const RegistrationPage = ({ location }) => (
   <section>
     <Helmet
@@ -59,19 +85,61 @@ const RegistrationPage = ({ location }) => (
       <Logo />
     </Background>
     <ThemeProvider color="white">
-      <Container>
-        <H1>{INTRO}</H1>
-        <H2>{SCHEDULE}</H2>
-
-        <H3>{FIVE_DAYS_TITLE}</H3>
-        <P lead>{FIVE_DAYS}</P>
-
-        <H3>{THREE_DAYS_TITLE}</H3>
-        <P lead>{THREE_DAYS}</P>
-
-        <H3>{SATURDAYS_TITLE}</H3>
-        <P lead>{SATURDAYS}</P>
-      </Container>
+      <Box>
+        <Container>
+          <H1>{INTRO}</H1>
+          <H2>{SCHEDULE}</H2>
+          <Row size="sm" gap={`${getMargin('md')}px`}>
+            <ThemeProvider color="red">
+              <Column>
+                <DoodleBackground
+                  src={ballBackpackDoodle}
+                />
+                <Text>
+                  <H3 noThemeColor>{FIVE_DAYS_TITLE}</H3>
+                  <P
+                    lead
+                    noMargin
+                    noThemeColor
+                  >
+                    {FIVE_DAYS}
+                  </P>
+                </Text>
+              </Column>
+            </ThemeProvider>
+            <ThemeProvider color="yellow">
+              <Column>
+                <DoodleBackground
+                  src={raquetTrophyDoodle}
+                />
+                <H3 noThemeColor>{THREE_DAYS_TITLE}</H3>
+                <P
+                  lead
+                  noMargin
+                  noThemeColor
+                >
+                  {THREE_DAYS}
+                </P>
+              </Column>
+            </ThemeProvider>
+            <ThemeProvider color="green">
+              <Column>
+                <DoodleBackground
+                  src={ballBackpackDoodle}
+                />
+                <H3 noThemeColor>{SATURDAYS_TITLE}</H3>
+                <P
+                  lead
+                  noMargin
+                  noThemeColor
+                >
+                  {SATURDAYS}
+                </P>
+              </Column>
+            </ThemeProvider>
+          </Row>
+        </Container>
+      </Box>
     </ThemeProvider>
   </section>
 );

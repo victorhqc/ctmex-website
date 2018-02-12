@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
 import {
-  getSize,
-} from '../themes/base';
+  mediaQuery,
+} from '../themes/utils';
 
 const mediaBreakPoint = size => `
-  @media (max-width: ${size}px) {
+  ${mediaQuery(size, `
     flex-wrap: wrap;
 
     > div {
       width: 100% !important;
     }
-  }
+  `)}
 `;
 
 const wrap = ({ size, noWrap }) => {
@@ -21,24 +21,59 @@ const wrap = ({ size, noWrap }) => {
 
   switch (size) {
     case 'xs':
-      return mediaBreakPoint(getSize('xs'));
+      return mediaBreakPoint('xs');
     case 'sm':
-      return mediaBreakPoint(getSize('sm'));
+      return mediaBreakPoint('sm');
     case 'md':
-      return mediaBreakPoint(getSize('md'));
+      return mediaBreakPoint('md');
     case 'lg':
-      return mediaBreakPoint(getSize('lg'));
+      return mediaBreakPoint('lg');
     case 'xl':
-      return mediaBreakPoint(getSize('xl'));
+      return mediaBreakPoint('xl');
     default:
-      return mediaBreakPoint(getSize('md'));
+      return mediaBreakPoint('md');
   }
+};
+
+const setGapBetweenChildren = ({ gap, size }) => {
+  if (!gap) {
+    return '';
+  }
+
+  return `
+    > *:first-child {
+      margin: 0 ${gap} 0 0;
+
+      ${mediaQuery(size, `
+        margin: 0 0 ${gap} 0;
+      `)}
+    }
+
+    > *:last-child {
+      margin: 0 0 0 ${gap};
+
+      ${mediaQuery(size, `
+        margin: ${gap} 0 0 0;
+      `)}
+    }
+
+    > * {
+      margin: 0 ${gap};
+      /* Horrible, horrible hack, but i'm tired and I don't want to make an abstraction, sue me. */
+      z-index: 1;
+
+      ${mediaQuery(size, `
+        margin: ${gap} 0;
+      `)}
+    }
+  `;
 };
 
 const Row = styled.div`
   display: flex;
 
   ${props => wrap(props)}
+  ${setGapBetweenChildren};
 `;
 
 export default Row;

@@ -11,7 +11,7 @@ evaluaciones cada determinado tiempo. Así teniendo un sistema de medición para
 desarrollo del alumno y descubrir sus fortalezas y debilidades.`;
 
 export const WHO_IS_IT_AIMED_AT_TITLE = '¿A quién va dirigido?';
-export const WHO_IS_IT_AIMED_AT = `El colegio inicia con niños y niñas a partir de 4 a 7 años de
+export const WHO_IS_IT_AIMED_AT = `El colegio inicia con niños y niñas a partir de 4 a 10 años de
 edad, esto pensado en el mejor desarrollo físico, mental, social y tenístico para el alumno.`;
 
 export const HOW_IS_THE_PROGRAM_TITLE = '¿En qué consta el programa?';
@@ -60,5 +60,5 @@ export const WHY_CHOOSE_CTMEX = [
   'Área de espera didáctica',
   'Desarrollo físico desde los 4 años',
   'Sistema de medición para saber el progreso del alumno',
-  'Atención enfocada en pequeños de 4 a 7 años',
+  'Atención enfocada en pequeños de 4 a 10 años',
 ];

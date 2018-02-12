@@ -1,8 +1,8 @@
 export const TITLE = 'Inscripciones';
-export const DESCRIPTION = `Ingreso de 4 a 7 años, con horatios desde las 4pm. De lunes a viernes,
+export const DESCRIPTION = `Ingreso de 4 a 10 años, con horatios desde las 4pm. De lunes a viernes,
 o 3 días a la semana.`;
 
-export const INTRO = 'Ingreso de 4 a 7 años';
+export const INTRO = 'Ingreso de 4 a 10 años';
 export const SCHEDULE = 'Horarios desde las 4pm';
 
 export const FIVE_DAYS_TITLE = '5 días a la semana';

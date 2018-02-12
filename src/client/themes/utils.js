@@ -74,8 +74,8 @@ export const setTextAlign = ({ textAlign }) => {
   return `text-align: ${textAlign};`;
 };
 
-export const setColor = ({ theme }) => {
-  if (!theme.color || !theme.color) {
+export const setColor = ({ theme, noThemeColor }) => {
+  if (noThemeColor || !theme.color || !theme.color) {
     return '';
   }
 
