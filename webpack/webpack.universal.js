@@ -42,13 +42,8 @@ const eslintRule = {
     {
       options: {
         formatter: eslintFormatter,
-        // @remove-on-eject-begin
-        // baseConfig: {
-        //   extends: [require.resolve('eslint-config-react-app')],
-        // },
         ignore: false,
         useEslintrc: true,
-        // @remove-on-eject-end
       },
       loader: require.resolve('eslint-loader'),
     },
@@ -100,11 +95,6 @@ const urlRule = {
       },
     },
   ],
-  // loader: require.resolve('url-loader'),
-  // options: {
-  //   limit: 10000,
-  //   ...fileOptions,
-  // },
 };
 
 const babelRule = {
