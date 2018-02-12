@@ -58,7 +58,8 @@ typings/
 .env
 
 
-bundle.dev.js
-media-dev/
+dist/
+public/
+automation
 
 .DS_Store
