@@ -18,6 +18,10 @@ import Container from './Container';
 
 import logo from '../../assets/ctmex_white.svg';
 
+import facebook from '../../assets/social/facebook.svg';
+import instagram from '../../assets/social/instagram.svg';
+import twitter from '../../assets/social/twitter.svg';
+
 import {
   routes,
 } from '../../locales/es/main';
@@ -52,6 +56,37 @@ const buildRoutes = items => (
   </Ul>
 );
 
+const buildSocialMedia = () => (
+  <Container
+    noBackground
+    textAlign="center"
+    margin={{
+      top: getMargin('xl'),
+      right: 0,
+      left: 0,
+      bottom: 0,
+    }}
+  >
+    <Row size="xs">
+      <Column size={1 / 3}>
+        <a href="https://www.facebook.com/ctmex">
+          <img src={facebook} width="40" alt="facebook @ctmex" />
+        </a>
+      </Column>
+      <Column size={1 / 3}>
+        <a href="https://twitter.com/colegiotenismx">
+          <img src={twitter} width="40" alt="twitter @colegiotenismx" />
+        </a>
+      </Column>
+      <Column size={1 / 3}>
+        <a href="https://www.instagram.com/ctmex">
+          <img src={instagram} width="40" alt="instagram @ctmex" />
+        </a>
+      </Column>
+    </Row>
+  </Container>
+);
+
 const Img = styled.img`
   margin-left: ${getMargin('xl')}px;
   margin-top: ${getMargin('xl')}px;
@@ -62,11 +97,14 @@ const Footer = () => (
     <ThemeProvider color="black">
       <Container minHeight="30vh" noMargin padding={getPadding('lg')}>
         <Row size="sm">
-          <Column size={1 / 2}>
+          <Column size={1 / 3}>
             <Img src={logo} alt="ctmex white logo" height="100" />
           </Column>
-          <Column size={1 / 2}>
+          <Column size={1 / 3}>
             {buildRoutes(routes)}
+          </Column>
+          <Column size={1 / 3}>
+            {buildSocialMedia()}
           </Column>
         </Row>
       </Container>
