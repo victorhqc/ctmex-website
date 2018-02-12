@@ -1,7 +1,8 @@
 export const TITLE = 'Preguntas frecuentes';
-export const DESCRIPTION = '';
+export const DESCRIPTION = `¿Tienes dudas? Aquí tenemos las respuestas a las preguntas más
+frecuentes, sobre el colegio de tenis mexicano`;
 
-export const WHAT_IS_CTMEX_TITLE = '¿Qué es CTMEX?';
+export const WHAT_IS_CTMEX_TITLE = '¿Qué es ctmex?';
 export const WHAT_IS_CTMEX = `Colegio de tenis mexicano es un nuevo sistema educativo deportivo
 aplicado al tenis, donde el alumno aprende de forma divertida, didáctica y profesional.`;
 
@@ -50,7 +51,7 @@ los padres que gusten esperar a sus hijos.`,
 export const SCHEDULE_TITLE = 'Horarios.';
 export const SCHEDULE = '4:00 a 5:30 pm 5:00 a 6:30 pm 6:00 a 7:30 pm 7:00 a 8:30 pm';
 
-export const WHY_CHOOSE_CTMEX_TITLE = '¿Porqué elegir CTMEX?';
+export const WHY_CHOOSE_CTMEX_TITLE = '¿Porqué elegir ctmex?';
 export const WHY_CHOOSE_CTMEX = [
   'Clases de lunes a viernes',
   'No suspendemos clases por aire o lluvia (canchas techadas)',

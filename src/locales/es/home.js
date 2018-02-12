@@ -37,4 +37,4 @@ comparando los diversos sistemas, metodologías y escuelas de Europa con México
 export const PICTURE_KIDS_RUNNING = 'Niños corriendo';
 export const PICTURE_KIDS_RACKET = 'Niños practicando con raquetas';
 export const PICTURE_WILSON = 'Cancha y equipo de ctmex';
-export const CTMEX_PICTURE = 'Imagotipo de CTMEX';
+export const CTMEX_PICTURE = 'Imagotipo de ctmex';
