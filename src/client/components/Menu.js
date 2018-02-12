@@ -99,6 +99,10 @@ const getBorderColor = (force = false) => (props) => {
 const Li = styled.li`
   margin: 0 ${getMargin('sm')}px;
 
+  ${mediaQuery('sm', `
+    margin: ${getMargin('sm')}px;
+  `)}
+
   a {
     display: block;
     text-decoration: none;
