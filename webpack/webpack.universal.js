@@ -25,7 +25,7 @@ const env = process.env.NODE_ENV || 'development';
 
 const getFileName = (e) => {
   if (e === 'production') {
-    return 'static/media/[name].[hash:8].[ext]';
+    return 'static/media/[name].[ext]';
   }
 
   return 'static/media-dev/[name].[ext]';
