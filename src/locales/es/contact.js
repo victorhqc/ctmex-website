@@ -23,3 +23,5 @@ export const FAILED_EMAIL_TITLE = 'Ups, No se ha podido enviar el mensaje';
 export const FAILED_EMAIL_MESSAGE = `
   Intenta nuevamente más tarde, lamentamos no poder ayudarte en éste momento.
 `;
+
+export const ACTUAL_ADDRESS = 'Anillo vial fray junipero Serra 19875 Querétaro, Qro. Mex.';

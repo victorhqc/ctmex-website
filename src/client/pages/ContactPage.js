@@ -48,6 +48,8 @@ import {
 
   FAILED_EMAIL_TITLE,
   FAILED_EMAIL_MESSAGE,
+
+  ACTUAL_ADDRESS,
 } from '../../locales/es/contact';
 
 import withRouterPropTypes from '../../constants/propTypes/withRouter';
@@ -366,7 +368,7 @@ class ContactPage extends Component {
                   </H3>
                   <H3>
                     {ADDRESS}<br />
-                    <small>Querétaro, Qro. Mex.</small>
+                    <small>{ACTUAL_ADDRESS}</small>
                   </H3>
                   <H3>
                     {EMAIL}<br />

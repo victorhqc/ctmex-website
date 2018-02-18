@@ -26,6 +26,10 @@ import {
   routes,
 } from '../../locales/es/main';
 
+import {
+  ACTUAL_ADDRESS,
+} from '../../locales/es/contact';
+
 const Ul = styled.ul`
   list-style: none;
   padding: 0;
@@ -92,19 +96,26 @@ const Img = styled.img`
   margin-top: ${getMargin('xl')}px;
 `;
 
+const Address = styled.address`
+  margin-top: ${getMargin('xl')}px;
+`;
+
 const Footer = () => (
   <footer>
     <ThemeProvider color="black">
       <Container minHeight="30vh" noMargin padding={getPadding('lg')}>
         <Row size="sm">
           <Column size={1 / 3}>
-            <Img src={logo} alt="ctmex white logo" height="100" />
+            <Img src={logo} alt="colegio de tenix mexicano" height="100" />
           </Column>
           <Column size={1 / 3}>
             {buildRoutes(routes)}
           </Column>
           <Column size={1 / 3}>
             {buildSocialMedia()}
+            <Address>
+              {ACTUAL_ADDRESS}
+            </Address>
           </Column>
         </Row>
       </Container>
