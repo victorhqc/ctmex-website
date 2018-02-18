@@ -18,8 +18,7 @@ const InfoContainer = styled.div`
   ${setColor}
 
   ${mediaQuery('xs', `
-    width: 100%;
-    margin: 0 ${getMargin('xs')}px;
+    padding: 0 ${getMargin('xs')}px;
   `)}
 `;
 

@@ -71,7 +71,7 @@ const buildSocialMedia = () => (
       bottom: 0,
     }}
   >
-    <Row size="xs">
+    <Row noWrap>
       <Column size={1 / 3}>
         <a href="https://www.facebook.com/ctmex">
           <img src={facebook} width="40" alt="facebook @ctmex" />

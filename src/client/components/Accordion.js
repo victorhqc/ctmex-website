@@ -13,14 +13,14 @@ import {
 
 const getBackgroundColor = ({ isActive }) => {
   if (!isActive) {
-    return '#eee';
+    return getColor('persianBlue');
   }
 
-  return '#ccc';
+  return getColor('madison');
 };
 
 const Title = styled.button`
-  color: ${getColor('black')};
+  color: ${getColor('white')};
   width: 100%;
   cursor: pointer;
   padding: ${getPadding('lg')}px;
@@ -37,7 +37,7 @@ const Title = styled.button`
   }
 
   &:hover {
-    background-color: #ccc;
+    background-color: #persianBlue;
   }
 }
 `;

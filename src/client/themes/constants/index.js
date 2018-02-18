@@ -54,6 +54,7 @@ export const COLORS = {
   jewel: '#19844a',
   // blue
   persianBlue: '#1946ba',
+  madison: '#0f2a70',
 };
 
 export const BASE_THEME = {

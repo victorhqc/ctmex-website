@@ -73,8 +73,8 @@ const BlueTennisDoodle = styled.div`
 `;
 
 const Box = styled.div`
-  margin-top: ${getMargin('md')};
-  margin-bottom: ${getMargin('md')};
+  margin-top: ${getMargin('md')}px;
+  margin-bottom: ${getMargin('md')}px;
 `;
 
 const SixyearsArticle = styled.article`

@@ -6,7 +6,12 @@ import ThemeProvider from '../themes/Provider';
 
 import {
   setVerticalAlign,
+  mediaQuery,
 } from '../themes/utils';
+
+import {
+  getMargin,
+} from '../themes/base';
 
 import Menu from '../components/Menu';
 import Container from '../components/Container';
@@ -46,6 +51,12 @@ const Gap = styled.div`
     width: 100%;
     min-height: 500px;
     ${setVerticalAlign}
+`;
+
+const LogoImg = styled.img`
+  ${mediaQuery('xs', `
+    margin-bottom: ${getMargin('xl')}px;
+  `)}
 `;
 
 const HomePage = ({ location }) => (
@@ -105,7 +116,7 @@ const HomePage = ({ location }) => (
             </Column>
             <Column size={1 / 4} verticalAlign>
               <Container>
-                <img
+                <LogoImg
                   width="100%"
                   src={imagotipo}
                   alt={CTMEX_PICTURE}

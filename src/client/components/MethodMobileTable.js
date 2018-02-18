@@ -65,7 +65,6 @@ td {
   border: none;
   border-bottom: 1px solid ${getColor('white')};
   position: relative;
-  width: 60%;
   padding-left: 40%;
 }
 
