@@ -32,7 +32,7 @@ const sitemap = sm.createSitemap({
   cacheTime: 24 * 60 * 1000,
   urls: map(routes, ({ url, ...route }) => ({
     ...route,
-    url: route.url === '/' ? '/' : `${route.url}/`,
+    url: url === '/' ? '/' : `${url}/`,
   })),
 });
 
