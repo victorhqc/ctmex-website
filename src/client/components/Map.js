@@ -43,9 +43,7 @@ class Map extends Component {
 
   render() {
     return (
-      <div>
-        <MapWrapper id="map" />
-      </div>
+      <MapWrapper id="map" />
     );
   }
 }

@@ -51,19 +51,18 @@ export default ({ res, req, context }) => {
   stream.pipe(res, { end: false });
 
   stream.on('end', () => {
-    res.end(`<script src="${bundle}?${version}"></script>
+    res.end(`</div>
+<script src="${bundle}?${version}"></script>
 <script>window.__VERSION__='${version}';</script>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114051003-1"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
 
-  gtag('config', 'UA-114051003-1');
+gtag('config', 'UA-114051003-1');
 </script>
-
-</body>
-</html>`);
+</body></html>`);
   });
 };
