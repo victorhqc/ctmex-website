@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import { injectGlobal } from 'styled-components';
 import PropTypes from 'prop-types';
 import { renderRoutes } from 'react-router-config';
-import { HelmetProvider } from 'react-helmet-async';
 import ThemeProvider from './themes/Provider';
 import Container from './components/Container';
 import Footer from './components/Footer';
@@ -28,19 +27,17 @@ injectGlobal`
 `;
 
 const App = ({ route }) => (
-  <HelmetProvider>
-    <ThemeProvider>
-      <Fragment>
-        <Container
-          noPadding
-          noMargin
-        >
-          {renderRoutes(route.routes)}
-        </Container>
-        <Footer />
-      </Fragment>
-    </ThemeProvider>
-  </HelmetProvider>
+  <ThemeProvider>
+    <Fragment>
+      <Container
+        noPadding
+        noMargin
+      >
+        {renderRoutes(route.routes)}
+      </Container>
+      <Footer />
+    </Fragment>
+  </ThemeProvider>
 );
 
 App.propTypes = {

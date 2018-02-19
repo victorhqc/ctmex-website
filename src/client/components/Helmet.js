@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ReactHelmet from 'react-helmet-async';
+import { Helmet as ReactHelmet } from 'react-helmet';
 
 import {
   KEYWORDS,
