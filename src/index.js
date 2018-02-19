@@ -8,9 +8,6 @@ import map from 'lodash/map';
 import Routes from './client/Routes';
 import server from './server';
 import ContextManager from './server/helpers/context';
-import {
-  NOT_FOUND,
-} from './constants';
 
 import email from './server/api/email';
 
@@ -53,13 +50,7 @@ app.get('*', (req, res) => {
 
   Promise.all(promises).then(() => {
     const context = new ContextManager();
-    const content = server({ req, context });
-
-    if (context.get(NOT_FOUND)) {
-      res.status(404);
-    }
-
-    res.send(content);
+    server({ res, req, context });
   });
 });
 
