@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import styled from 'styled-components';
+import map from 'lodash/map';
 
 import ThemeProvider from '../themes/Provider';
 
@@ -43,8 +44,8 @@ import {
   THREE_DAYS_TITLE,
   THREE_DAYS,
 
-  SATURDAYS_TITLE,
-  SATURDAYS,
+  TWO_DAYS_TITLE,
+  TWO_DAYS,
 } from '../../locales/es/registration';
 
 import withRouterPropTypes from '../../constants/propTypes/withRouter';
@@ -65,6 +66,16 @@ const Box = styled.div`
 const Text = styled.article`
   z-index: 1;
 `;
+
+const renderParagraphs = texts => map(texts, text => (
+  <P
+    lead
+    noMargin
+    noThemeColor
+  >
+    {text}
+  </P>
+));
 
 const RegistrationPage = ({ location }) => (
   <section>
@@ -97,13 +108,7 @@ const RegistrationPage = ({ location }) => (
                 />
                 <Text>
                   <H3 noThemeColor>{FIVE_DAYS_TITLE}</H3>
-                  <P
-                    lead
-                    noMargin
-                    noThemeColor
-                  >
-                    {FIVE_DAYS}
-                  </P>
+                  {renderParagraphs(FIVE_DAYS)}
                 </Text>
               </Column>
             </ThemeProvider>
@@ -113,13 +118,7 @@ const RegistrationPage = ({ location }) => (
                   src={raquetTrophyDoodle}
                 />
                 <H3 noThemeColor>{THREE_DAYS_TITLE}</H3>
-                <P
-                  lead
-                  noMargin
-                  noThemeColor
-                >
-                  {THREE_DAYS}
-                </P>
+                {renderParagraphs(THREE_DAYS)}
               </Column>
             </ThemeProvider>
             <ThemeProvider color="green">
@@ -127,14 +126,8 @@ const RegistrationPage = ({ location }) => (
                 <DoodleBackground
                   src={ballBackpackDoodle}
                 />
-                <H3 noThemeColor>{SATURDAYS_TITLE}</H3>
-                <P
-                  lead
-                  noMargin
-                  noThemeColor
-                >
-                  {SATURDAYS}
-                </P>
+                <H3 noThemeColor>{TWO_DAYS_TITLE}</H3>
+                {renderParagraphs(TWO_DAYS)}
               </Column>
             </ThemeProvider>
           </Row>

@@ -5,14 +5,26 @@ o 3 días a la semana.`;
 export const INTRO = 'Ingreso de 4 a 10 años';
 export const SCHEDULE = 'Horarios desde las 4pm';
 
-export const FIVE_DAYS_TITLE = '5 días a la semana';
-export const FIVE_DAYS = `De Lunes a viernes, con costo es de $2,000.00 mxn mensuales y
-$1,500.00 mxn de inscripción.`;
+export const FIVE_DAYS_TITLE = 'PAQUETE ELITE ';
+export const FIVE_DAYS = [
+  'De lunes a viernes',
+  '45 minutos de tenis',
+  '45 minutos de desarrollo físico',
+  'En total, 30 horas al mes',
+];
 
-export const THREE_DAYS_TITLE = '3 días a la semana';
-export const THREE_DAYS = `Contamos con dos opciones: lunes, miércoles y viernes; o
-martes, jueves y sábado. Con costo de $1,250.00 mxn y $1,250.00 de inscripción.`;
+export const THREE_DAYS_TITLE = 'PAQUETE PRO';
+export const THREE_DAYS = [
+  'Tres días a la semana, únicamente lunes, miércoles y viernes.',
+  '45 minutos de tenis',
+  '45 minutos de desarrollo físico',
+  'En total, 18 horas al mes',
+];
 
-export const SATURDAYS_TITLE = 'Sólo sábados';
-export const SATURDAYS = `Por último, contamos con clases sólo los sábados. Con costo de
-$600.00 mxn mensuales.`;
+export const TWO_DAYS_TITLE = 'PAQUETE ESTÁNDAR';
+export const TWO_DAYS = [
+  'Dos días a la semana, únicamente martes y jueves.',
+  '45 minutos de tenis',
+  '45 minutos de de desarrollo fisico',
+  'En total 12 horas al mes',
+];

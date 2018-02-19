@@ -364,7 +364,7 @@ class ContactPage extends Component {
                 <Column size={1 / 3}>
                   <H3>
                     {PHONE}<br />
-                    <small>445 123 123</small>
+                    <small>442 721 8230</small>
                   </H3>
                   <H3>
                     {ADDRESS}<br />

@@ -22,17 +22,14 @@ Hace más de 30 años nuestro país pasó de ser un referente en el tenis a nive
 a un país con jugadores jóvenes con potencial que se quedaban a medio camino, esto debido a que
 el tenis y la forma de enseñarlo, han evolucionado y México se ha quedado atrás.
 En nuestra metodología creemos que un jugador profesional no nace, se hace! Y para esto
-el aspecto profesional debe de estar en cada aspecto, en cada etapa
-(iniciación, Junior, juvenil, amateur y profesional),
-tanto en cada instrucción del entrenador, como en cada acción del jugador. También creemos
-que el tenis debe de llegar a muchas más personas para que así pueda florecer, y esto
-solamente se logrará haciéndolo accesible y sacándolo de los clubes privados. Donde solamente
-pocos niños y niñas lo juegan.`;
+el aspecto profesional debe de estar en cada etapa (iniciación, Junior, juvenil, amateur
+y profesional), tanto en cada instrucción del entrenador, como en cada acción del jugador.
+También creemos que el tenis debe de llegar a muchas más personas para que así pueda florecer,
+y esto solamente se logrará haciéndolo accesible.`;
 
 export const ORIGINS_TITLE = '¿Dónde nace?';
-export const ORIGINS = `El proyecto Colegio de Tenis Mexicano nace en Francia y surge a través
-de viajes de investigación y certificación por Europa, en países referentes del tenis como España,
-comparando los diversos sistemas, metodologías y escuelas de Europa con México`;
+export const ORIGINS = `El proyecto Colegio de Tenis Mexicano nace en Europa y surge a través
+de viajes de investigación y certificaciones.`;
 
 export const PICTURE_KIDS_RUNNING = 'Niños corriendo';
 export const PICTURE_KIDS_RACKET = 'Niños practicando con raquetas';

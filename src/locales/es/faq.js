@@ -40,7 +40,6 @@ aclaración de cualquier tipo de dudas que puedan tener.`;
 
 export const REGISTRATION_INCLUDES_TITLE = 'La inscripción incluye.';
 export const REGISTRATION_INCLUDES = [
-  'Dos playeras tipo polo (uniforme)',
   'Seguro en caso de algún accidente dentro de las instalaciones.',
   `Las clases son de lunes a viernes con duración de 90 minutos conformados de las siguiente
 manera: 45 minutos de entrenamiento de tenis: 45 minutos de desarrollo físico.`,
