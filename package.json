@@ -1,6 +1,6 @@
 {
   "name": "ctmex-website",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Colegio de tenis mexicano",
   "main": "dist/index.js",
   "website": "http://colegiodetenis.mx",
