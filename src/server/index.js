@@ -28,10 +28,11 @@ export default ({ req, context }) => {
   <head>
     ${helmet.title.toString()}
     ${helmet.meta.toString()}
-    <link rel="shortcut icon" href="${favicon}" type="image/x-icon">
-    <meta charset="utf-8">
-    <meta http-equiv="content-language" content="es-MX">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="${favicon}" type="image/x-icon" />
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="es-MX" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google-site-verification" content="QXzJc8AVGIK88EaltTJ_GqfB8OMe7rtPV9pXrmjhmIA" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" />
     ${styleTags}
   </head>
